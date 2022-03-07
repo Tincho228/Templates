@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Categoria extends Model
 {
     use HasFactory;
+    
+    // Relacion uno a muchos
+
+    public function post(){
+        return $this->hasMany(Post::class);
+    }
 }

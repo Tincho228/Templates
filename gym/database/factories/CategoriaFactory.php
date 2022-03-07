@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Categoria;
 use Illuminate\Database\Eloquent\Factories\Factory;
-
+use Illuminate\Support\Str;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Categoria>
  */
@@ -19,9 +19,11 @@ class CategoriaFactory extends Factory
 
     public function definition()
     {
+        $name = $this->faker->unique()->sentence(1);
         return [
-            'name' => $this->faker->sentence(2),
-            'description' => $this->faker->paragraph(),
+            'name' => $name,
+            'slug' => Str::slug($name),
+            'description' => $this->faker->paragraph(1),
             'price' => $this->faker->numberBetween(10,100)
         ];
         }

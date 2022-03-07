@@ -1,9 +1,16 @@
-@extends('layouts.plantilla')
+<x-app-layout>
 
-@section('title', 'Detalle de categoria '.$categoria)
+<h1>{{$categoria->name}}</h1>
+<p>{{$categoria->description}}</p>
 
 
-@section('content')
-<h1>Aqui podras mostrar la categoria <?php echo $categoria ?></h1>
-@endsection
+
+</x-app-layout>
+
+
+
+
+
+
+
 
