@@ -258,8 +258,8 @@ return [
             'icon' => 'fas fa-fw fa-user', //<i class="fa-brands fa-buffer"></i>
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
+            'text' => 'Instructores',
+            'route'  => 'admin.instructors.index',
             'icon' => 'fas fa-fw fa-lock',
         ],
         [

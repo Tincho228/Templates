@@ -3,11 +3,10 @@
 @section('title', 'Administrador')
 
 @section('content_header')
-<h1>Mostrar listas de categorias</h1>
+    <h1>Mostrar listado de Instructores</h1>
 @stop
 
 @section('content')
-
 @if (session('info'))
     <div class="alert alert-success">
         <strong>{{session('info')}}</strong>
@@ -16,7 +15,7 @@
 
 <div class="card">
     <div class="card-header">
-    <a class="btn btn btn-info btn-sm" href="{{route('admin.categorias.create')}}">Crear categoria</a>
+    <a class="btn btn btn-info btn-sm" href="{{route('admin.instructors.create')}}">Crear instructor</a>
     </div>
     <div class="card-body">
 
@@ -25,21 +24,21 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Nombre</th>
+                    <th scope="col">Slug</th>
                     <th scope="col">Descripcion</th>
-                    <th scope="col">Precio</th>
                 </tr>
             </thead>
 
             <tbody>
-                @foreach ($categorias as $categoria)
+                @foreach ($instructors as $instructor)
                 <tr>
                     <th scope="row">1</th>
-                    <td>{{$categoria->name}}</td>
-                    <td>{{$categoria->description}}</td>
-                    <td>{{$categoria->price}}</td>
-                    <td><a class="btn btn-sm btn-secondary" href="{{route('admin.categorias.edit', $categoria)}}">Editar</a></td>
+                    <td>{{$instructor->name}}</td>
+                    <td>{{$instructor->slug}}</td>
+                    <td>{{$instructor->description}}</td>
+                    <td><a class="btn btn-sm btn-secondary" href="{{route('admin.instructors.edit', $instructor)}}">Editar</a></td>
                     <td>
-                        <form action="{{route('admin.categorias.destroy', $categoria)}}" method="POST">
+                        <form action="{{route('admin.instructors.destroy', $instructor)}}" method="POST">
                             @csrf 
                             @method('delete')
                             <button type="submit" class="btn btn-danger btn-sm mr-2">Eliminar</button>
@@ -55,16 +54,8 @@
         </table>
     </div>
 </div>
-
 @stop
 
 @section('css')
-<link rel="stylesheet" href="/css/admin_custom.css">
-@stop
-
-@section('js')
-<script>
-    console.log('Hi!');
-
-</script>
+    <link rel="stylesheet" href="/css/admin_custom.css">
 @stop
