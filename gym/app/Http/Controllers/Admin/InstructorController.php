@@ -38,6 +38,13 @@ class InstructorController extends Controller
     public function store(Request $request)
     {
         
+        $request ->validate([
+            'name' => 'required',
+            'slug' => 'required|unique:instructors',
+            'description'=>'required'
+        ]);
+        $instructor = Instructor::create($request->all());
+        return redirect()->route('admin.instructors.edit', $instructor)->with('info', 'El instructor se ha creado con exito');
     }
 
     /**
@@ -71,7 +78,15 @@ class InstructorController extends Controller
      */
     public function update(Request $request, Instructor $instructor)
     {
-        //
+        $request ->validate([
+            'name' => 'required',
+            'slug' => "required|unique:instructors,slug,$instructor->id",
+            'description'=>'required',
+            
+        ]);
+        $instructor->update($request->all());
+
+        return redirect()->route('admin.instructors.edit', $instructor)->with('info', 'El instructor se actualizo con exito');
     }
 
     /**
@@ -82,6 +97,8 @@ class InstructorController extends Controller
      */
     public function destroy(Instructor $instructor)
     {
-        //
+        $instructor->delete();
+        
+        return redirect()->route('admin.instructors.index')->with('info', 'El instructor se eliminó con exito');
     }
 }

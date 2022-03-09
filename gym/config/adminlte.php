@@ -249,18 +249,20 @@ return [
         [
             'text'        => 'Panel de Control',
             'route'         => 'admin.home',
-            'icon'        => 'far fa-fw fa-file',
+            'icon'        => 'fas fa-tachometer-alt fa-fw',
         ],
         ['header' => 'ADMINISTRADOR'],
         [
             'text' => 'Categorias',
             'route'  => 'admin.categorias.index',
-            'icon' => 'fas fa-fw fa-user', //<i class="fa-brands fa-buffer"></i>
+            'icon' => 'fa fa-fw fa-database', //<i class="fa-brands fa-buffer"></i>
+            'active' => ['admin/categorias*']
         ],
         [
             'text' => 'Instructores',
             'route'  => 'admin.instructors.index',
-            'icon' => 'fas fa-fw fa-lock',
+            'icon' => 'fa fa-user-plus fa-fw ',
+            'active' => ['admin/instructors*']
         ],
         [
             'text'    => 'multilevel',
