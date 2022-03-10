@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\CategoriaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\InstructorController;
+use App\Http\Controllers\Admin\PostController;
 
 Route::get('', [HomeController::class, 'index'])->name('admin.home');
 
@@ -17,3 +18,4 @@ Route::resource('categorias', CategoriaController::class)->names('admin.categori
 // Route::delete('categorias/{categoria}',[CategoriaController::class, 'destroy'])->name('admin.categorias.destroy');
 
 Route::resource('instructors', InstructorController::class)->names('admin.instructors');
+Route::resource('posts', PostController::class)->names('admin.posts');
