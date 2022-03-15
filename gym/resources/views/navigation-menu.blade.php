@@ -27,7 +27,7 @@
                 <a class="nav-link" href="#">Contactanos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
+                <a class="nav-link" href="#">Sobre mi</a>
             </li>
             
                 @if (Route::has('login'))
@@ -42,7 +42,7 @@
                     </li>
                     @if (Route::has('register'))
                     <li class="nav-item">
-                        <a href="{{ route('register') }}" class="nav-link text-muted">Register</a>
+                        <a href="{{ route('register') }}" class="nav-link text-muted">Registrate</a>
                     </li>
                     @endif
                     @endif
@@ -120,7 +120,7 @@
                         </h6>
 
                         <x-jet-dropdown-link href="{{ route('profile.show') }}">
-                            {{ __('Profile') }}
+                            {{ __('Mi perfil') }}
                         </x-jet-dropdown-link>
 
                         <x-jet-dropdown-link href="{{ route('admin.home') }}">
@@ -138,7 +138,7 @@
                         <!-- Authentication -->
                         <x-jet-dropdown-link href="{{ route('logout') }}" onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
-                            {{ __('Log out') }}
+                            {{ __('Salir') }}
                         </x-jet-dropdown-link>
                         <form method="POST" id="logout-form" action="{{ route('logout') }}">
                             @csrf
