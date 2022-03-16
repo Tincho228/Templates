@@ -25,8 +25,8 @@
     <div class="container d-flex flex-wrap justify-content-center ">
 
         @foreach ($posts as $post)
-
-        <div class="card m-3" style="width: 18rem;">
+        
+        <div class="card m-3" style="width: 18rem;">    
             <img src="{{Storage::url($post->image->url)}}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StorePostRequest;
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Categoria;
 
 class PostController extends Controller
 {
@@ -25,7 +27,9 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('admin.posts.create');
+        $categorias = Categoria::pluck('name', 'id');
+        
+        return view('admin.posts.create', compact('categorias'));
     }
 
     /**
@@ -34,9 +38,11 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePostRequest $request)
     {
-        //
+        $post = Post::create($request->all());
+        return redirect()->route('admin.posts.edit', $post);   
+        
     }
 
     /**
@@ -81,6 +87,8 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        
+        return redirect()->route('admin.posts.index')->with('info', 'El post se eliminó con exito');
     }
 }
