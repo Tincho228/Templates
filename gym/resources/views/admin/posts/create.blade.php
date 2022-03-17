@@ -10,11 +10,26 @@
     <div class="card">
         <div class="card-body">
             
-            {!! Form::open(['route' => 'admin.posts.store']) !!}
+            {!! Form::open(['route' => 'admin.posts.store','files'=>true]) !!}
 
                 {!! Form::hidden('user_id',auth()->user()->id) !!}    
 
                 @include('admin.posts.partials.form')
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <div class="img-wrapper">
+                            <img id="picture" class="img-fluid" src="https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            {!! Form::label('file','Imagen') !!}
+                            {!! Form::file('file',['class'=>'form-control-file mb-3']) !!}
+                            <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius possimus obcaecati delectus exercitationem, accusamus eaque!</div>
+                        </div>
+                    </div>
+                </div>
                 
                 {!! Form::submit('Enviar formulario', ['class' => 'btn btn-sm btn-primary']) !!}
 
@@ -34,9 +49,20 @@
             space: '-'
   });
 });
+    document.getElementById('file').addEventListener('change', cambiarImagen);
+    function cambiarImagen(event){
+        var file = event.target.files[0];
+        let reader = new FileReader();
+        reader.onload = (event) => {
+            document.getElementById('picture').setAttribute('src', event.target.result);
+        }
+        reader.readAsDataURL(file);
+    }
     </script>
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
+    <style>
+        
+    </style>
 @stop

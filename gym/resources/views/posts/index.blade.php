@@ -27,7 +27,7 @@
         @foreach ($posts as $post)
         
         <div class="card m-3" style="width: 18rem;">    
-            <img src="{{Storage::url($post->image->url)}}" class="card-img-top" alt="...">
+                <img src="{{Storage::url($post->image->url)}}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
@@ -46,7 +46,7 @@
 
         @foreach ($instructors as $instructor)
 
-        <div class="card m-3" style="width: 18rem;">
+        <div class="card m-3" style="width: 18rem;">       
             <img src="{{Storage::url($post->image->url)}}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">{{$instructor->name}}</h5>

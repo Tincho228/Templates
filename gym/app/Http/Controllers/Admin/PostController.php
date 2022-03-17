@@ -7,6 +7,7 @@ use App\Http\Requests\StorePostRequest;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Categoria;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -41,7 +42,21 @@ class PostController extends Controller
     public function store(StorePostRequest $request)
     {
         $post = Post::create($request->all());
-        return redirect()->route('admin.posts.edit', $post);   
+
+        if($request->file('file')){
+            $url = Storage::disk('public')->put('posts',$request->file('file'));
+            $post->image()->create([
+                'url'=> $url
+            ]);
+        }else {
+            $post->image()->create([
+                'url'=> 'https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
+            ]);
+        }
+        
+        
+        
+        // return redirect()->route('admin.posts.edit', $post);   
         
     }
 
