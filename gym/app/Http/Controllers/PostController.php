@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     public function index(){
-        $posts = Post::all();
+        $posts = Post::latest()->get();
         $categorias = Categoria::all();
         $instructors = Instructor::all();
         return view('posts.index', compact('posts', 'categorias','instructors'));

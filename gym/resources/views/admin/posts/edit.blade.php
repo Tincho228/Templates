@@ -7,7 +7,23 @@
 @stop
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
+@if (session('info'))
+    <div class="alert alert-success">
+        <strong>{{session('info')}}</strong>
+    </div>
+    @endif
+<div class="card">
+        <div class="card-body">
+            
+            {!! Form::model($post,['route' => ['admin.posts.update',$post],'files'=>true,'method'=>'put']) !!}
+
+                @include('admin.posts.partials.form')
+
+                {!! Form::submit('Actualizar post', ['class' => 'btn btn-sm btn-primary']) !!}
+
+            {!! Form::close() !!}
+        </div>
+    </div>
 @stop
 
 @section('css')
@@ -15,5 +31,23 @@
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
+    <script src="{{asset('vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js')}}"></script>
+    <script>
+        $(document).ready( function() {
+             $("#name").stringToSlug({
+            setEvents: 'keyup keydown blur',
+            getPut: '#slug',
+            space: '-'
+  });
+});
+    document.getElementById('file').addEventListener('change', cambiarImagen);
+    function cambiarImagen(event){
+        var file = event.target.files[0];
+        let reader = new FileReader();
+        reader.onload = (event) => {
+            document.getElementById('picture').setAttribute('src', event.target.result);
+        }
+        reader.readAsDataURL(file);
+    }
+    </script>
 @stop

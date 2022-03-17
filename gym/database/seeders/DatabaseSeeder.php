@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
         Storage::disk('public')->deleteDirectory('posts');
         Storage::disk('public')->makeDirectory('posts');
 
+
+        $this->call(RoleSeeder::class);
         $this->call(CategoriaSeeder::class);
         $this->call(InstructorSeeder::class);
         $this->call(UserSeeder::class);  
