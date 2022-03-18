@@ -250,29 +250,46 @@ return [
             'text'        => 'Panel de Control',
             'route'         => 'admin.home',
             'icon'        => 'fas fa-tachometer-alt fa-fw',
+            'can'         => 'admin.home',
         ],
-        ['header' => 'ADMINISTRADOR'],
+        [
+            'text'        => 'Usuarios',
+            'route'         => 'admin.users.index',
+            'icon'        => 'fas fa-users fa-fw',
+            'can'         => 'admin.users.index',
+        ],
+        [
+            'text'        => 'Lista de roles',
+            'route'         => 'admin.roles.index',
+            'icon'        => 'fas fa-users-cog fa-fw',
+            //'can'         => 'admin.users.index',
+        ],
         [
             'text' => 'Categorias',
             'route'  => 'admin.categorias.index',
             'icon' => 'fa fa-fw fa-database', //<i class="fa-brands fa-buffer"></i>
-            'active' => ['admin/categorias*']
+            'active' => ['admin/categorias*'],
+            'can'         => 'admin.categorias.index',
+
         ],
         [
             'text' => 'Instructores',
             'route'  => 'admin.instructors.index',
             'icon' => 'fa fa-user-plus fa-fw ',
-            'active' => ['admin/instructors*']
+            'active' => ['admin/instructors*'],
+            'can'         => 'admin.instructors.index',
         ],
         
         ['header' => 'OPCIONES DE BLOG'],
         [
             'text'       => 'Lista de Post',
             'route'        => 'admin.posts.index',
+            'can'         => 'admin.posts.index',
         ],
         [
             'text'       => 'Crear nuevo Post',
             'route'        => 'admin.posts.create',
+            'can'         => 'admin.posts.create',
         ],
        
     ],

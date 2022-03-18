@@ -8,6 +8,15 @@ use Illuminate\Http\Request;
 
 class InstructorController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('can:admin.instructors.index')->only('index');
+        $this->middleware('can:admin.instructors.create')->only('create','store');
+        $this->middleware('can:admin.instructors.edit')->only('edit','update');
+        $this->middleware('can:admin.instructors.destroy')->only('destroy');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -47,23 +56,6 @@ class InstructorController extends Controller
         return redirect()->route('admin.instructors.edit', $instructor)->with('info', 'El instructor se ha creado con exito');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Instructor $instructor)
-    {
-        return view('admin.instructors.show', compact('instructor'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Instructor $instructor)
     {
         return view('admin.instructors.edit', compact('instructor'));

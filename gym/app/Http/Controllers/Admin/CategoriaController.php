@@ -9,6 +9,13 @@ use App\Models\Categoria;
 
 class CategoriaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('can:admin.categorias.index')->only('index');
+        $this->middleware('can:admin.categorias.create')->only('create','store');
+        $this->middleware('can:admin.categorias.edit')->only('edit','update');
+        $this->middleware('can:admin.categorias.destroy')->only('destroy');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -48,23 +55,6 @@ class CategoriaController extends Controller
         return redirect()->route('admin.categorias.edit', $categoria)->with('info', 'La categoria se ha creado con exito');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Categoria $categoria)
-    {
-        return view('admin.categorias.show', compact('categoria'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Categoria $categoria)
     {
         return view('admin.categorias.edit', compact('categoria'));
