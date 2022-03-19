@@ -13,9 +13,12 @@
             <div class="form-group">
                 {!! Form::label('name', 'Nombre') !!}
                 {!! Form::text('name', null, ['class'=>'form-control', 'placeholder'=>'Ingrese el nombre del rol']) !!}
+                @error('name')
+                    <span class="text-danger">{{$message}}</span>
+                @enderror
             </div>
-                {!! Form::submit('Crear Rol',['class'=>'btn btn-primary']) !!}
-            {!! Form::close() !!}
+
+            
 
             <h2 class="h3 mt-2">Lista de permisos</h2>
             @foreach($permissions as $permission)
@@ -28,6 +31,8 @@
             </div>
 
             @endforeach
+            {!! Form::submit('Crear Rol',['class'=>'btn btn-primary']) !!}
+            {!! Form::close() !!}
         </div>
        
     </div>
