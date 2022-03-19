@@ -60,10 +60,12 @@
   --bs-body-color: #212529;
   --bs-body-bg: #f8fafc;
   --bg-skyblue-light: rgb(11,155,227);
+  --bg-skyblue-middle: rgb(33,120,241);
   --bg-skyblue-dark: rgb(46,117,182);
   --bg-nav-link-active:rgb(255,255,0);
   --body-font: 'Poppins', sans-serif;
   --body-italic: 'Roboto', sans-serif;
+  --title-font: Arial, Helvetica, sans-serif;
 }
 
 *,
@@ -74,6 +76,17 @@
 
 .bg-skyblue-light {
   background-color:var(--bg-skyblue-light);
+}
+.bg-skyblue-middle {
+  background-color:var(--bg-skyblue-middle);
+}
+.title-font {
+  font-family: var(--title-font);
+}
+.btn-yellow {
+  border: 1px solid var(--bg-nav-link-active) !important;
+  color:var(--bg-nav-link-active) !important;
+  border-radius: 25px !important;
 }
 
 /* Style Nav links */

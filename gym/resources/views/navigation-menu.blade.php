@@ -1,5 +1,5 @@
-<div>
-<nav class="navbar navbar-expand-md navbar-dark bg-skyblue-light border-bottom sticky-top">
+<div >
+<nav class="navbar navbar-expand-md navbar-dark bg-skyblue-light border-bottom sticky-top" style="box-shadow: 0px 8px 9px #ffffff91;">
     <div class="container">
         <!-- Logo -->
         <a class="navbar-brand me-4" href="/">

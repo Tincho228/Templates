@@ -18,7 +18,7 @@
     </head>
     <body class="bg-light font-sans antialiased">
         @livewire('navigation-menu')
-        <div class="container my-5">
+        <div class="">
         {{ $slot }}
         </div>
     </body>
