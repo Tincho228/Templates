@@ -1,4 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:ital,wght@1,300&display=swap');
 @charset "UTF-8";
 /*!
  * Bootstrap v5.1.3 (https://getbootstrap.com/)
@@ -58,12 +59,32 @@
   --bs-body-line-height: 1.6;
   --bs-body-color: #212529;
   --bs-body-bg: #f8fafc;
+  --bg-skyblue-light: rgb(11,155,227);
+  --bg-skyblue-dark: rgb(46,117,182);
+  --bg-nav-link-active:rgb(255,255,0);
+  --body-font: 'Poppins', sans-serif;
+  --body-italic: 'Roboto', sans-serif;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+.bg-skyblue-light {
+  background-color:var(--bg-skyblue-light);
+}
+
+/* Style Nav links */
+.active-warning {
+  background-color: var(--bg-nav-link-active);
+  border-radius:5px;
+  padding:5px !important;
+  color:var(--bg-skyblue-dark) !important;
+  font-family: var(--body-italic);
+  font-weight:600 !important;
+  transition:0.5s;
 }
 
 @media (prefers-reduced-motion: no-preference) {

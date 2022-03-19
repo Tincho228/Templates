@@ -11,12 +11,29 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+
+        @livewireStyles
 
         <!-- Scripts -->
+        
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
-    <body class="bg-light font-sans antialiased">
-        {{ $slot }}
+    <body class="font-sans antialiased bg-light">
+        <x-jet-banner />
+        
+        @livewire('navigation-menu')
+        
+
+        <!-- Page Content -->
+        <main class="container my-5">
+            {{ $slot }}
+        </main>
+
+        @stack('modals')
+
+        @livewireScripts
+
+        @stack('scripts')
     </body>
 </html>

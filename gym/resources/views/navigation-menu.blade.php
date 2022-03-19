@@ -1,33 +1,30 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark border-bottom sticky-top">
+<div>
+<nav class="navbar navbar-expand-md navbar-dark bg-skyblue-light border-bottom sticky-top">
     <div class="container">
         <!-- Logo -->
         <a class="navbar-brand me-4" href="/">
-            <x-jet-application-mark width="36" />
+            <img src="assets/logos/logo.png" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav me-auto">
-                <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                    {{ __('Dashboard') }}
-                </x-jet-nav-link>
-            </ul>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            
 
             <!-- Right Side Of Navbar -->
             
             <ul class="navbar-nav align-items-baseline">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+                <a class="nav-link @if(Request::is('/')) active-warning @endif" href="{{route('posts.index')}}">Inicio</a>
+            </li>
+            
+            <li class="nav-item">
+            <a class="nav-link @if(Request::is('about')) active-warning @endif" href="{{route('about')}}">Sobre mi</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Contactanos</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Sobre mi</a>
+            <a class="nav-link @if(Request::is('contact')) active-warning @endif" href="{{route('contact')}}">Contactanos</a>                
             </li>
             
                 @if (Route::has('login'))
@@ -38,7 +35,7 @@
                     </li> -->
                     @else
                     <li class="nav-item">
-                        <a href="{{ route('login') }}" class="nav-link text-muted">Log in</a>
+                        <a href="{{ route('login') }}"  class="nav-link text-muted">Log in</a>
                     </li>
                     @if (Route::has('register'))
                     <li class="nav-item">
@@ -154,3 +151,4 @@
         </div>
     </div>
 </nav>
+</div>

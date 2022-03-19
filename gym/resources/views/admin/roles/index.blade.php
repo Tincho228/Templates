@@ -7,6 +7,11 @@
 @stop
 
 @section('content')
+@if (session('info'))
+    <div class="alert alert-success">
+        <strong>{{session('info')}}</strong>
+    </div>
+@endif
 <div class="card">
     <div class="card-header">
     <a class="btn btn btn-info btn-sm float-right" href="{{route('admin.roles.create')}}">Crear role</a>
