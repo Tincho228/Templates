@@ -1,6 +1,6 @@
 <div >
 <nav class="navbar navbar-expand-md navbar-dark bg-skyblue-light border-bottom sticky-top" style="box-shadow: 0px 8px 9px #ffffff91;">
-    <div class="container">
+    <div class="container d-flex align-items-center">
         <!-- Logo -->
         <a class="navbar-brand me-4" href="/">
             <img src="assets/logos/logo.png" alt="">
@@ -9,9 +9,12 @@
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
         </button>
-
+        <div class="phone-link">
+            <a class="nav-item nav-link h3" href=""><i class="fal fa-phone"></i> 261 126252636</a>  
+        </div>
+        
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-            
+        
 
             <!-- Right Side Of Navbar -->
             

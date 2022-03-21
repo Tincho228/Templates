@@ -11,34 +11,58 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active ">
-                    <div class="row mt-5" >
-                        <div class="col-lg-6 col-sm-6">
-                            <div class="bodytext text-light">
-                                <h1 class="display-3 title-font mt-5 mb-5">EXPERIENCIA.</h1>
-                                <P class="h5">¿Cuál es el valor de la experiencia?
-                                    La experiencia es base fundamental del conocimiento y conjuntamente con los estudios
-                                    garantiza el ser un excelente profesional.
-                                </P>
-                                <P>
-                                    <<< Empezá tu rutina hoy>>>
-                                </P>
-                                <button class="btn btn-yellow">Comenzar</button>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-sm-6">
-                            <img src="assets/images/hero-experiencia.png" class="img-fluid" alt="...">
+
+                    <div class="text-light hero-section">
+                        <img class="hero-image" src="assets/images/hero-experiencia.png" alt="imagen principal">
+                        <div class="hero-body">
+                            <h1 class="title-font">EXPERIENCIA.</h1>
+                            <p>¿Cuál es el valor de la experiencia?
+                                La experiencia es base fundamental del
+                                conocimiento y conjuntamente con los estudios
+                                garantiza el ser un excelente profesional.
+                            </p>
+                            <p>
+                                <<< Comenzá tu rutina ahora>>>
+                            </p>
+                            <a class="btn btn-yellow" href="">Comenzá</a>
                         </div>
                     </div>
 
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/images/hero-experiencia.png" class="d-block" alt="...">
+                    <div class="text-light hero-section">
+                        <img class="hero-image2" src="assets/images/hero-fortaleza.png" alt="imagen principal">
+                        <div class="hero-body">
+                            <h1 class="title-font">FORTALEZA.</h1>
+                            <p>La fortaleza es una virtud que permite al individuo enfrentar, soportar y vencer los
+                                obstáculos que van en contra del bien y de su parte espiritual.
+                            </p>
+                            <p>
+                                <<< Comenzá tu rutina ahora>>>
+                            </p>
+                            <a class="btn btn-yellow" href="">Comenzá</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/images/hero-experiencia.png" class="d-block" alt="...">
+                    <div class="text-light hero-section">
+                        <img class="hero-image3" src="assets/images/hero-disciplina.png" alt="imagen principal">
+                        <div class="hero-body">
+                            <h1 class="title-font">DISCIPLINA.</h1>
+                            <p>La disciplina es la capacidad de las personas para poner en práctica una serie de
+                                principios relativos al orden y la constancia, tanto para la ejecución de tareas y
+                                actividades cotidianas, como en sus vidas en general.
+
+                            </p>
+                            <p>
+                                <<< Comenzá tu rutina ahora>>>
+                            </p>
+                            <a class="btn btn-yellow" href="">Comenzá</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
+
         </div>
     </div>
 </div>
