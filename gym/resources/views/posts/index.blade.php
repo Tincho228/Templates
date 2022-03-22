@@ -3,6 +3,7 @@
 
 @livewire('home.new-product-section')
 
+@livewire('home.atributes-section')
 
 <div class="container">
 <h1 class="text-center">Categorias</h1>
