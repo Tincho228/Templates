@@ -134,6 +134,18 @@
 .hero-body p{
   font-size:20px;
 }
+.hero-body a{
+  font-size:20px;
+  padding-right:20px;
+  padding-left:20px;
+  font-style: italic;
+}
+.hero-body a:hover {
+  background-color:var(--bg-nav-link-active);
+  color: var(--bg-skyblue-dark) !important;
+  font-weight: 800;
+  transition:0.5s;
+}
 
 }
   /*Código para Móvil*/
@@ -177,6 +189,11 @@
 }
 .hero-body p{
   padding-right:50%;
+}
+
+/* New prduct section */
+.new-product-image{
+  background-image: url('assets/images/new-product.jpg');
 }
 } 
   /* Código para Tablets*/

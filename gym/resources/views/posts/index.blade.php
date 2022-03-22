@@ -1,5 +1,7 @@
 <x-app-layout>
 @livewire('home.hero-section')
+
+@livewire('home.new-product-section')
 <div class="container">
 <h1 class="text-center">Categorias</h1>
 
