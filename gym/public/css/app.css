@@ -102,6 +102,15 @@
   font-weight:600 !important;
   transition:0.5s;
 }
+.new-product-section{
+  height:500px;
+  overflow: hidden;
+}
+.new-product-image{
+  display: block;
+  width: 100%;
+  margin:auto;
+}
 
 
 
@@ -145,6 +154,11 @@
   color: var(--bg-skyblue-dark) !important;
   font-weight: 800;
   transition:0.5s;
+}
+.new-product-image{
+  display: block;
+  width: 100%;
+  margin:auto;
 }
 
 }
@@ -190,11 +204,12 @@
 .hero-body p{
   padding-right:50%;
 }
-
-/* New prduct section */
 .new-product-image{
-  background-image: url('assets/images/new-product.jpg');
+  display: block;
+  width: 100%;
+  margin:auto;
 }
+
 } 
   /* Código para Tablets*/
 @media only screen and (min-width: 481px) and (max-width: 768px){
