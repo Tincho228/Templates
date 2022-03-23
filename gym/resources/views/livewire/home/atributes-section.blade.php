@@ -1,3 +1,4 @@
+<div class="container-fluid">
 <div class="row atributes-section">
     <div class="col-sm-12 col-md-4 bg-atribute-gray atribute-item">
         <div class="d-flex align-items-center justify-content-center">
@@ -32,4 +33,5 @@
             </div>
         </div>
     </div>
+</div>
 </div>

@@ -11,7 +11,6 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active ">
-
                     <div class="text-light hero-section">
                         <img class="hero-image" src="assets/images/hero-experiencia.png" alt="imagen principal">
                         <div class="hero-body">
@@ -62,7 +61,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
