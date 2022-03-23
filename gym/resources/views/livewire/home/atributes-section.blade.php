@@ -6,7 +6,7 @@
                 <img src="assets/iconos/icono-conocimiento.png" alt="icono de conocimiento">
             </div>
             <div class="text-light" style="margin-left:10px;">
-                <p class="atribute-item-title">CONOCIMIENTO Y PRÁCTICA</p>
+                <p class="atribute-item-title title-font">CONOCIMIENTO Y PRÁCTICA</p>
                 <span class="atribute-item-description">Breve titulo explicativo sobre este atributo</span>
             </div>
         </div>
@@ -17,7 +17,7 @@
                 <img src="assets/iconos/icono-confianza.png" alt="icono de confianza">
             </div>
             <div class="text-light" style="margin-left:10px;">
-                <p class="atribute-item-title">CONFIANZA Y RESPETO</p>
+                <p class="atribute-item-title title-font">CONFIANZA Y RESPETO</p>
                 <span class="atribute-item-description">Breve titulo explicativo sobre este atributo</span>
             </div>
         </div>
@@ -28,7 +28,7 @@
                 <img src="assets/iconos/icono-valor.png" alt="icono de confianza">
             </div>
             <div class="text-light" style="margin-left:10px;">
-                <p class="atribute-item-title">VALOR PROPIO</p>
+                <p class="atribute-item-title title-font">VALOR PROPIO</p>
                 <span class="atribute-item-description">Breve titulo explicativo sobre este atributo</span>
             </div>
         </div>

@@ -50,7 +50,7 @@
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 33, 37, 41;
   --bs-body-bg-rgb: 248, 250, 252;
-  --bs-font-sans-serif: "Nunito", sans-serif;
+  --bs-font-sans-serif: "Poppins", sans-serif;
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
@@ -94,13 +94,32 @@
 .bg-skyblue-middle {
   background-color:var(--bg-skyblue-middle);
 }
+
 .title-font {
   font-family: var(--title-font);
 }
+.body-font{
+  font-family: var(--body-font);
+}
+
+
 .btn-yellow {
   border: 1px solid var(--bg-nav-link-active) !important;
   color:var(--bg-nav-link-active) !important;
   border-radius: 25px !important;
+}
+/* Animation */
+.blink_me {
+  animation: blinker 2s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+.body-font {
+  font-family: var(--body-font);
 }
 
 /* Style Nav links */
@@ -169,8 +188,7 @@
 }
 .new-product-section{
   position:relative;
-  height:50vh;
-  overflow: hidden;
+  height: 50vh;
 }
 .new-product-image{
   display: block;
@@ -179,10 +197,26 @@
 }
 .new-product-price{
   position:absolute;
-  top:5px;
-  right:10px;
+  top:30px;
+  right:300px;
 }
-
+.new-product-price img {
+  width: 130%;
+}
+.new-product-button{
+  position:absolute;
+  top:297px;
+  right:326px;
+}
+.atribute-item {
+  padding:40px;
+  padding-left:30px !important;
+  padding-right:30px !important;
+}
+.atribute-item-title {
+  font-size:20px;
+  margin-bottom:0px;
+}
   
 
 
@@ -225,7 +259,7 @@
 .hero-body a{
   margin-bottom:30px;
 }
- .new-product-section{
+.new-product-section{
   position:relative;
 }
 .new-product-image{
@@ -240,6 +274,11 @@
 }
 .new-product-price img {
   width: 65%;
+}
+.new-product-button{
+  position:absolute;
+  top:122px;
+  right:72px;
 }
 .atribute-item {
   padding:40px;
@@ -285,11 +324,26 @@
   margin:auto;
 }
 .new-product-price{
-  padding:10px;
   position:absolute;
   top:5px;
   right:10px;
-  width:150px;
+}
+.new-product-price img {
+  width: 100%;
+}
+.new-product-button{
+  position:absolute;
+  top:196px;
+  right:58px;
+}
+.atribute-item {
+  padding:40px;
+  padding-left:30px !important;
+  padding-right:30px !important;
+}
+.atribute-item-title {
+  font-size:20px;
+  margin-bottom:0px;
 }
 
 }
@@ -321,7 +375,7 @@
 
 body {
   margin: 0;
-  font-family: var(--bs-body-font-family);
+  font-family: var(--body-font);
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
