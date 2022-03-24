@@ -19,4 +19,8 @@ class Categoria extends Model
     public function post(){
         return $this->hasMany(Post::class);
     }
+    // Relacion uno a uno polimorfica
+    public function image(){
+        return $this->morphOne(Image::class, 'imageable');
+    }
 }

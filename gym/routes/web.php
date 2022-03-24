@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,9 @@ Route::get('categorias/create', [CategoriaController::class, 'create'])->name('c
 Route::get('categorias/{categoria}', [CategoriaController::class, 'show'])->name('categorias.show');
 
 
-Route::get('/', [PostController::class, 'index'])->name('posts.index');
+Route::get('posts', [PostController::class, 'index'])->name('posts.index');
+
+Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
 Route::get('about', [AboutController::class, '__invoke'])->name('about');
 
