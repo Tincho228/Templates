@@ -9,7 +9,7 @@
                     class="card-img-top" alt="...">
                 @else
                 <!-- <img src="{{Storage::url($categoria->image->url)}}" class="card-img-top" alt="..."> -->
-                <div class="category-image" style="background-image: url('assets/images/new-product.jpg')">
+                <div class="category-image" style="background-image: url('{{Storage::url($categoria->image->url)}}')">
                 
                 </div>
                 <!-- <img src="assets/images/new-product.jpg" class="card-img-top" alt="..."> -->
@@ -19,12 +19,6 @@
                     <a class="btn btn-sm btn-yellow category-button" href="">Ver más</a>
                 </div>
                 @endif
-
-                <!-- <div class="card-body">
-                    <h5 class="card-title">{{$categoria->name}}</h5>
-                    <p class="card-text">{{$categoria->description}}</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div> -->
                 
         </div>
         

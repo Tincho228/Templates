@@ -7,6 +7,10 @@
 
     @livewire('home.categoria-section')
 
+    @livewire('home.goals-section')
+
     @livewire('home.post-section')
+
+    
 
 </x-app-layout>

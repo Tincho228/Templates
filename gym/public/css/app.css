@@ -65,6 +65,8 @@
 
   --bg-price-green:rgb(212,240,18);
 
+  --goals-title-color:rgb(0,176,240);
+
   --bg-skyblue-light: rgb(11,155,227);
   --bg-skyblue-middle: rgb(33,120,241);
   --bg-skyblue-dark: rgb(46,117,182);
@@ -79,6 +81,9 @@
 *::before,
 *::after {
   box-sizing: border-box;
+}
+.goals-title-color {
+  color:var(--goals-title-color);
 }
 .bg-categoria-skyblue {
   background-color: var(--bg-categoria-skyblue);
