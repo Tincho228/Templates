@@ -1,4 +1,6 @@
-<div class="d-flex flex-wrap">
+<div class="pt-5 bg-posts-skyblue" >
+    <h1 class="text-light text-center title-font">OPINIONES DE NUESTROS CLIENTES</h1>
+    <p class="text-light text-center mb-5">Breve descripcion de esta seccion</p>
     @foreach($posts as $post)
     <div class="card m-3" style="width: 18rem;">
                 @if($post->image->url == 'placeholder')
