@@ -20,7 +20,7 @@
             
             <ul class="navbar-nav align-items-baseline">
             <li class="nav-item">
-                <a class="nav-link @if(Request::is('/')) active-warning @endif" href="{{route('posts.index')}}">Inicio</a>
+                <a class="nav-link @if(Request::is('/')) active-warning @endif" href="{{route('home.index')}}">Inicio</a>
             </li>
             
             <li class="nav-item">

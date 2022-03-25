@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriaController;
-use App\Http\Controllers\PostController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
@@ -18,13 +17,6 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-
-Route::get('categorias', [CategoriaController::class, 'index'])->name('categorias.index');
-Route::get('categorias/create', [CategoriaController::class, 'create'])->name('categorias.create');
-Route::get('categorias/{categoria}', [CategoriaController::class, 'show'])->name('categorias.show');
-
-
-Route::get('posts', [PostController::class, 'index'])->name('posts.index');
 
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
