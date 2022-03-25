@@ -15,6 +15,13 @@
                     <p class="card-text">{{$post->description}}</p>
                     <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
+                @php
+                    $user = \App\Http\Livewire\Home\PostSection::getUser($post->id);
+                @endphp
+                
+                {{$user[0]->name}}
+                
             </div>
     @endforeach
+    
 </div>
