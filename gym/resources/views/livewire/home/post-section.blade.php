@@ -4,32 +4,31 @@
     <div class="row">
         @foreach($posts as $post)
         <div class="col-sm-12 col-md-4 col-lg-3">
-            <div class="card">
-                <div>
-                    @if($post->image->url == 'placeholder')
-                    <img src='https://images.pexels.com/photos/669582/pexels-photo-669582.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
-                        class="rounded-circle" alt="...">
-                    @else
-                    <img src="{{Storage::url($post->image->url)}}" class="rounded-circle" width="32px" height="32px"
-                        alt="...">
-                    @endif
-                    @php
-                    $user = \App\Http\Livewire\Home\PostSection::getUser($post->id);
-                    @endphp
-                    {{$user[0]->name}}
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-comment"></i>
+            <div class="card mb-2 bg-posts-gray color-posts" style="box-shadow: 0px 5px 20px black;">
+                <div class="p-2 d-flex justify-content-between">
+                    <div>
+                        @php
+                        $user = \App\Http\Livewire\Home\PostSection::getUser($post->id);
+                        @endphp
+                        @if($user[0]->profile_photo_url)
+                        <img src="{{$user[0]->profile_photo_url}}" class="rounded-circle" width="32px" height="32px" alt="">
+                        @endif
+                        {{$user[0]->name}}
+                    </div>
+                    <div>
+                        <i class="fas fa-star color-skyblue-light"></i>
+                        <i class="fas fa-star color-skyblue-light"></i>
+                        <i class="fas fa-star color-skyblue-light" style="margin-right:10px;"></i>
+                        <i class="fas fa-comment color-skyblue-light"></i>
+                    </div>
                 </div>
-                <hr class="">
-                <div class="card-body">
-                    
-                    <p class="card-text">{{$post->body}}</p>
+                <hr style="margin:0px;">
+                <div class="">
+                    <p class="p-2 card-text">"{{$post->name}}"</p>
                 </div>
-                <hr class="">
+                <hr style="margin:0px;">
+                <p class="text-end" style="padding-right:10px;">{{$post->created_at->format('d/m/Y')}}</p>
                 
-                {{$post->created_at->format('m/d/Y')}}
 
 
 

@@ -67,6 +67,8 @@
 
   --goals-title-color:rgb(0,176,240);
 
+  --bg-posts-gray:rgb(242,242,242);
+
   --bg-skyblue-light: rgb(11,155,227);
   --bg-skyblue-middle: rgb(33,120,241);
   --bg-skyblue-dark: rgb(46,117,182);
@@ -82,7 +84,15 @@
 *::after {
   box-sizing: border-box;
 }
-
+.color-posts {
+  color:var(--bg-atribute-blue);
+}
+.bg-posts-gray{
+  background-color:var(--bg-posts-gray);
+}
+.color-skyblue-light {
+  color:var(--bg-skyblue-light);
+}
 .bg-posts-skyblue {
   background-color: var(--goals-title-color);
 }
