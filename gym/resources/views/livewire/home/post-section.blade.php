@@ -5,24 +5,34 @@
         @foreach($posts as $post)
         <div class="col-sm-12 col-md-4 col-lg-3">
             <div class="card">
-                @if($post->image->url == 'placeholder')
-                <img src='https://images.pexels.com/photos/669582/pexels-photo-669582.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
-                    class="rounded-circle" alt="...">
-                @else
-                <img src="{{Storage::url($post->image->url)}}" class="rounded-circle" width="32px" height="32px" alt="...">
-                @endif
-
-                <div class="card-body">
-                    <h5 class="card-title">{{$post->name}}</h5>
-                    <p class="card-text">{{$post->description}}</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                <div>
+                    @if($post->image->url == 'placeholder')
+                    <img src='https://images.pexels.com/photos/669582/pexels-photo-669582.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
+                        class="rounded-circle" alt="...">
+                    @else
+                    <img src="{{Storage::url($post->image->url)}}" class="rounded-circle" width="32px" height="32px"
+                        alt="...">
+                    @endif
+                    @php
+                    $user = \App\Http\Livewire\Home\PostSection::getUser($post->id);
+                    @endphp
+                    {{$user[0]->name}}
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-comment"></i>
                 </div>
-                @php
-                $user = \App\Http\Livewire\Home\PostSection::getUser($post->id);
-                @endphp
-
-                {{$user[0]->name}}
+                <hr class="">
+                <div class="card-body">
+                    
+                    <p class="card-text">{{$post->body}}</p>
+                </div>
+                <hr class="">
                 
+                {{$post->created_at->format('m/d/Y')}}
+
+
+
             </div>
         </div>
         @endforeach
