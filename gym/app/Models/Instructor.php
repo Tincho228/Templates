@@ -14,4 +14,8 @@ class Instructor extends Model
     {
         return 'slug';
     }
+    // Relacion uno a uno polimorfica
+    public function image(){
+        return $this->morphOne(Image::class, 'imageable');
+    }
 }

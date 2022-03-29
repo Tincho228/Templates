@@ -12,4 +12,6 @@
 
     @livewire('home.post-section')
 
+    @livewire('home.instructor-section')
+
 </x-app-layout>
