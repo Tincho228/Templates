@@ -22,11 +22,11 @@
                         <i class="fas fa-comment color-skyblue-light"></i>
                     </div>
                 </div>
-                <hr style="margin:0px;">
+                <hr style="border:1px solid #9dc3e6; margin:0">
                 <div class="">
                     <p class="p-2 card-text">"{{$post->name}}"</p>
                 </div>
-                <hr style="margin:0px;">
+                <hr style="border:1px solid #9dc3e6; margin:0">
                 <p class="text-end" style="padding-right:10px;">{{$post->created_at->format('d/m/Y')}}</p>
                 
             </div>

@@ -22,7 +22,7 @@ class InstructorFactory extends Factory
         return [
             'name' => $name,
             'slug' => Str::slug($name),
-            'description' => $this->faker->paragraph(1)
+            'description' => $this->faker->paragraph(2)
         ];
     }
 }

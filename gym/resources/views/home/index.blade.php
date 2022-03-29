@@ -14,4 +14,6 @@
 
     @livewire('home.instructor-section')
 
+    @livewire('home.call-action-section')
+
 </x-app-layout>
