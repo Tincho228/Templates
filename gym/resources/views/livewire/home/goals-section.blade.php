@@ -1,4 +1,4 @@
-<div class="pb-5" style="background-image: url('assets/images/tus-metas-bg.jpg');background-size: cover; background-position:center">
+<div class="pb-5 container-fluid" style="background-image: url('assets/images/tus-metas-bg.jpg');background-size: cover; background-position:center">
     <h1 class="text-light title-font text-center pt-5">TE AYUDAMOS CON TUS METAS</h1>
     <p class="text-light text-center">Breve explicacion de esta seccion</p>
     <div class="row mt-5">

@@ -1,4 +1,4 @@
-<div class="bg-skyblue-middle">
+<div class="bg-skyblue-middle container-fluid">
     <div class="container">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
