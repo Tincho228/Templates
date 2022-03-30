@@ -1,6 +1,6 @@
 <div class="container-fluid pt-5 pb-5 bg-skyblue-middle text-light">
     <img src="assets/logos/logo.png" alt="Logo" style="display:block; margin:auto;">
-    <p class=" mt-5 mb-3 h5">Veni a vernos</p>
+    <p class=" mt-5 mb-3 h5">Veni a visitarnos</p>
     <div class="footer-contact">
         <p ><i class="fas fa-map-marker-alt"></i> Avenida 256, San rafael Mendoza</p>
         <p ><i class="fas fa-envelope"></i> consultas@mygym.com</p>
