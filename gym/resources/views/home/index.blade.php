@@ -16,4 +16,6 @@
 
     @livewire('home.call-action-section')
 
+    @livewire('home.map-section')
+    
 </x-app-layout>

@@ -1,10 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\AboutController;
-use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\HomeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +22,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
 Route::get('about', [AboutController::class, '__invoke'])->name('about');
 
-Route::get('contact', [ContactController::class, '__invoke'])->name('contact');
+Route::get('contacto', [ContactoController::class,'index'])->name('contacto.index');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

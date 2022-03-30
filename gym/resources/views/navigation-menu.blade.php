@@ -27,7 +27,7 @@
             <a class="nav-link @if(Request::is('about')) active-warning @endif" href="{{route('about')}}">Sobre mi</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link @if(Request::is('contact')) active-warning @endif" href="{{route('contact')}}">Contactanos</a>                
+            <a class="nav-link @if(Request::is('contacto')) active-warning @endif" href="{{route('contacto.index')}}">Contactanos</a>                
             </li>
             
                 @if (Route::has('login'))

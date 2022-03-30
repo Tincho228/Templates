@@ -27,6 +27,7 @@
     <div class="">
         {{ $slot }}
     </div>
+    @livewire('partials.footer-section')
 </body>
 
 </html>
