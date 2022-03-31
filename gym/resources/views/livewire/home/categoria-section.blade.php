@@ -1,7 +1,7 @@
-<div class="container-fluid bg-categoria-skyblue">
+<div class="container-fluid bg-categoria-skyblue" style="padding:0px">
     <h1 class="text-center title-font text-light pt-5">NUESTRAS RUTINAS</h1>
     <p class="text-center text-light mb-5">Breve explicativo sobre esta seccion</p>
-    <div class="container">
+    <div class="container" style="padding:0px">
     <div class="d-flex flex-wrap justify-content-evenly pb-5">
         @foreach($categorias as $categoria)
         <div class="mb-2 category-item">

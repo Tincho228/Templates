@@ -4,50 +4,50 @@
     <div class="container">
     <div class="row mt-5">
         <div class="col-sm-12 col-md-4">
-            <div class="d-flex align-items-start justify-content-center" style="padding:15px 40px;">
+            <div class="d-flex align-items-start justify-content-center" style="padding:15px 0px;">
                 <img class="" src="assets/iconos/icono-dieta.png" alt="icono de dieta saludable">
                 <div style="margin-left:20px;">
-                    <p class="title-font goals-title-color" style="font-size:20px; margin-bottom:0px;"><strong>DIETA
+                    <p class="title-font goals-title-color" style="font-size:18px; margin-bottom:0px;"><strong>DIETA
                             SALUDABLE</strong></p>
                     <p class="text-light">Breve explicacion de este atributo</p>
                 </div>
             </div>
         </div>
         <div class="col-sm-12 col-md-4">
-            <div class="d-flex align-items-start justify-content-center" style="padding:15px 40px;">
+            <div class="d-flex align-items-start justify-content-center" style="padding:15px 0px;">
                 <img class="" src="assets/iconos/icono-resistencia.png" alt="icono de dieta saludable">
                 <div style="margin-left:20px;">
-                    <p class="title-font goals-title-color" style="font-size:20px; margin-bottom:0px;"><strong>MAYOR
+                    <p class="title-font goals-title-color" style="font-size:18px; margin-bottom:0px;"><strong>MAYOR
                             RESISTENCIA</strong></p>
                     <p class="text-light">Breve explicacion de este atributo</p>
                 </div>
             </div>
         </div>
         <div class="col-sm-12 col-md-4">
-            <div class="d-flex align-items-start justify-content-center" style="padding:15px 40px;">
+            <div class="d-flex align-items-start justify-content-center" style="padding:15px 0px;">
                 <img class="" src="assets/iconos/icono-fortaleza.png" alt="icono de dieta saludable">
                 <div style="margin-left:20px;">
-                    <p class="title-font goals-title-color" style="font-size:20px; margin-bottom:0px;"><strong>MAYOR
+                    <p class="title-font goals-title-color" style="font-size:18px; margin-bottom:0px;"><strong>MAYOR
                             FORTALEZA</strong></p>
                     <p class="text-light">Breve explicacion de este atributo</p>
                 </div>
             </div>
         </div>
         <div class="col-sm-12 col-md-4">
-            <div class="d-flex align-items-start justify-content-center" style="padding:15px 40px;">
+            <div class="d-flex align-items-start justify-content-center" style="padding:15px 0px;">
                 <img class="" src="assets/iconos/icono-forma.png" alt="icono de dieta saludable">
                 <div style="margin-left:20px;">
-                    <p class="title-font goals-title-color" style="font-size:20px; margin-bottom:0px;"><strong>MEJORA TU
+                    <p class="title-font goals-title-color" style="font-size:18px; margin-bottom:0px;"><strong>MEJORA TU
                             FORMA</strong></p>
                     <p class="text-light">Breve explicacion de este atributo</p>
                 </div>
             </div>
         </div>
         <div class="col-sm-12 col-md-4">
-            <div class="d-flex align-items-start justify-content-center" style="padding:15px 40px;">
+            <div class="d-flex align-items-start justify-content-center" style="padding:15px 0px;">
                 <img class="" src="assets/iconos/icono-salud.png" alt="icono de dieta saludable">
                 <div style="margin-left:20px;">
-                    <p class="title-font goals-title-color" style="font-size:20px; margin-bottom:0px;"><strong>MEJORA TU
+                    <p class="title-font goals-title-color" style="font-size:18px; margin-bottom:0px;"><strong>MEJORA TU
                             SALUD</strong></p>
                     <p class="text-light">Breve explicacion de este atributo</p>
                 </div>

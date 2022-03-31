@@ -3,7 +3,7 @@
                                                 background-position:center; 
                                                 background-repeat:no-repeat">
 
-    <h1 class="text-light text-center font-title">LLAMANOS</h1>
+    <h1 class="text-light text-center title-font">LLAMANOS</h1>
     <p class="text-light text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos magni maxime
         reprehenderit nam nisi . Enim?</p>
 

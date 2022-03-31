@@ -32,5 +32,5 @@
         </div>
     </div>
     <hr>
-    <p class="text-center text-light">Todos los derechos reservados | mygym.com</p>
+    <p class="text-center text-light">Todos los derechos reservados | <span class="text-warning">mygym.com</span></p>
 </div>

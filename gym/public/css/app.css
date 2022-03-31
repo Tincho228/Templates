@@ -120,6 +120,8 @@
 
 .title-font {
   font-family: var(--title-font);
+  font-style: italic;
+  font-weight:600;
 }
 .body-font{
   font-family: var(--body-font);
