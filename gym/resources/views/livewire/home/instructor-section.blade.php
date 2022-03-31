@@ -13,6 +13,9 @@
             
             <h3 class="text-light mb-3 text-center">{{$instructor->name}}</h3>
             <P class="text-light text-center" style="padding:0px 20px;">{{$instructor->description}}</P>
+            <div class="d-flex justify-content-center">
+            <a href="" class="btn btn-yellow">Ver más</a>
+            </div>
         </div>
         @endforeach
     </div>
