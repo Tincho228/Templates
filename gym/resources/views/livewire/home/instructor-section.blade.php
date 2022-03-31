@@ -1,6 +1,7 @@
 <div class="container-fluid bg-skyblue-middle pt-5 pb-5">
     <h1 class="text-light text-center title-font">NUESTROS INSTRUCTORES</h1>
     <p class="text-light text-center mb-5">Breve descripcion de esta seccion</p>
+    <div class="container">
     <div class="row">
         @foreach ($instructors as $instructor)
         <div class="col-sm-12 col-md-4 mb-4">
@@ -14,5 +15,6 @@
             <P class="text-light text-center" style="padding:0px 20px;">{{$instructor->description}}</P>
         </div>
         @endforeach
+    </div>
     </div>
 </div>

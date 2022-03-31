@@ -1,4 +1,4 @@
-<div class="container-fluid p-3 pb-5 bg-skyblue-middle text-light">
+<div class="container-fluid p-3 pb-2 bg-skyblue-middle text-light">
     <img src="assets/logos/logo.png" alt="Logo" style="display:block; margin:30px auto;">
     <hr>
     <div class="container">
@@ -23,7 +23,7 @@
             </div>
             <div class="col-sm-12 col-md-6 col-lg-4 footer-links">
                 <p class="mt-3 mb-2 h5">Links útiles</p>
-                <div class="p-3 links-container">
+                <div class="pt-3 links-container">
                     <a href="" class="nav-link text-light"><i class="fas fa-check-circle"></i> Acerca de mi</a>
                     <a href="" class="nav-link text-light"><i class="fas fa-check-circle"></i> Contacto</a>
                     <a href="" class="nav-link text-light"><i class="fas fa-check-circle"></i> Home</a>

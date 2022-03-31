@@ -1,6 +1,7 @@
 <div class="container-fluid pt-5 pb-5 bg-posts-skyblue">
     <h1 class="text-light text-center title-font">OPINIONES DE NUESTROS CLIENTES</h1>
     <p class="text-light text-center mb-5">Breve descripcion de esta seccion</p>
+    <div class="container">
     <div class="row">
         @foreach($posts as $post)
         <div class="col-sm-12 col-md-6 col-lg-3">
@@ -32,5 +33,6 @@
             </div>
         </div>
         @endforeach
+    </div>
     </div>
 </div>
