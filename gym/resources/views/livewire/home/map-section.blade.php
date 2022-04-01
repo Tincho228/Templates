@@ -27,4 +27,11 @@
         height: 100%;
         width: 100%;
     }
+    @media only screen and (min-width: 320px) and (max-width: 480px) {
+
+        .iframe-container {
+            padding-bottom: 70%;
+        }
+
+    }
 </style>

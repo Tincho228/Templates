@@ -38,11 +38,11 @@
                     </li> -->
                     @else
                     <li class="nav-item">
-                        <a href="{{ route('login') }}"  class="nav-link text-muted">Log in</a>
+                        <a href="{{ route('login') }}"  class="nav-link">Log in</a>
                     </li>
                     @if (Route::has('register'))
                     <li class="nav-item">
-                        <a href="{{ route('register') }}" class="nav-link text-muted">Registrate</a>
+                        <a href="{{ route('register') }}" class="nav-link">Registrate</a>
                     </li>
                     @endif
                     @endif

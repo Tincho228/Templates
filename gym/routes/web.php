@@ -23,6 +23,8 @@ Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::get('about', [AboutController::class, '__invoke'])->name('about');
 
 Route::get('contacto', [ContactoController::class,'index'])->name('contacto.index');
+Route::post('contacto',[ContactoController::class,'store'])->name('contacto.store');
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

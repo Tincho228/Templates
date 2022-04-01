@@ -7,8 +7,8 @@
             <div class="d-flex align-items-start justify-content-center" style="padding:15px 0px;">
                 <img class="" src="assets/iconos/icono-dieta.png" alt="icono de dieta saludable">
                 <div style="margin-left:20px;">
-                    <p class="title-font goals-title-color" style="font-size:18px; margin-bottom:0px;"><strong>DIETA
-                            SALUDABLE</strong></p>
+                    <p class="title-font goals-title-color" style="font-size:18px; margin-bottom:0px;">DIETA
+                            SALUDABLE</p>
                     <p class="text-light">Breve explicacion de este atributo</p>
                 </div>
             </div>
@@ -17,8 +17,8 @@
             <div class="d-flex align-items-start justify-content-center" style="padding:15px 0px;">
                 <img class="" src="assets/iconos/icono-resistencia.png" alt="icono de dieta saludable">
                 <div style="margin-left:20px;">
-                    <p class="title-font goals-title-color" style="font-size:18px; margin-bottom:0px;"><strong>MAYOR
-                            RESISTENCIA</strong></p>
+                    <p class="title-font goals-title-color" style="font-size:18px; margin-bottom:0px;">MAYOR
+                            RESISTENCIA</p>
                     <p class="text-light">Breve explicacion de este atributo</p>
                 </div>
             </div>
@@ -27,8 +27,8 @@
             <div class="d-flex align-items-start justify-content-center" style="padding:15px 0px;">
                 <img class="" src="assets/iconos/icono-fortaleza.png" alt="icono de dieta saludable">
                 <div style="margin-left:20px;">
-                    <p class="title-font goals-title-color" style="font-size:18px; margin-bottom:0px;"><strong>MAYOR
-                            FORTALEZA</strong></p>
+                    <p class="title-font goals-title-color" style="font-size:18px; margin-bottom:0px;">MAYOR
+                            FORTALEZA</p>
                     <p class="text-light">Breve explicacion de este atributo</p>
                 </div>
             </div>
@@ -37,8 +37,8 @@
             <div class="d-flex align-items-start justify-content-center" style="padding:15px 0px;">
                 <img class="" src="assets/iconos/icono-forma.png" alt="icono de dieta saludable">
                 <div style="margin-left:20px;">
-                    <p class="title-font goals-title-color" style="font-size:18px; margin-bottom:0px;"><strong>MEJORA TU
-                            FORMA</strong></p>
+                    <p class="title-font goals-title-color" style="font-size:18px; margin-bottom:0px;">MEJORA TU
+                            FORMA</p>
                     <p class="text-light">Breve explicacion de este atributo</p>
                 </div>
             </div>
@@ -47,8 +47,8 @@
             <div class="d-flex align-items-start justify-content-center" style="padding:15px 0px;">
                 <img class="" src="assets/iconos/icono-salud.png" alt="icono de dieta saludable">
                 <div style="margin-left:20px;">
-                    <p class="title-font goals-title-color" style="font-size:18px; margin-bottom:0px;"><strong>MEJORA TU
-                            SALUD</strong></p>
+                    <p class="title-font goals-title-color" style="font-size:18px; margin-bottom:0px;">MEJORA TU
+                            SALUD</p>
                     <p class="text-light">Breve explicacion de este atributo</p>
                 </div>
             </div>
