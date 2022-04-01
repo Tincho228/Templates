@@ -24,6 +24,6 @@ class ContactoController extends Controller
         
         $correo = new ContactoMailable($request->all());
         Mail::to('martinquintero521@gmail.com')->send($correo);
-        return redirect()->route('contacto.index')->with('info', 'Mensaje enviado');
+        return redirect()->route('contacto.index')->with('info', 'Listo!!! Nos pondremos en contacto a la brevedad');
     }
 }

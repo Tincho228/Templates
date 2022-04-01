@@ -10,7 +10,7 @@ use Illuminate\Queue\SerializesModels;
 class ContactoMailable extends Mailable
 {
     use Queueable, SerializesModels;
-    public $subject = "Informacion de contacto";
+    public $subject = "Consulta de mi pagina web";
     public $contacto;
     /**
      * Create a new message instance.
