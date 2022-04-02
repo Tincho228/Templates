@@ -51,16 +51,6 @@ class PostController extends Controller
     {
         $post = Post::create($request->all());
 
-        if($request->file('file')){
-            $url = Storage::disk('public')->put('posts',$request->file('file'));
-            $post->image()->create([
-                'url'=> $url
-            ]);
-        }else {
-            $post->image()->create([
-                'url' =>'placeholder'
-            ]);
-        }
         return redirect()->route('admin.posts.edit', $post);   
         
     }
@@ -84,16 +74,7 @@ class PostController extends Controller
     {
         $this->authorize('author', $post);
         $post->update($request->all());
-        if($request->file('file')){
-            $url = Storage::disk('public')->put('posts',$request->file('file'));
-
-            if($post->image){
-                Storage::disk('public')->delete('posts',$post->image->url);
-                $post->image->update([
-                    'url' => $url
-                ]);
-            }
-        }
+        
         return redirect()->route('admin.posts.edit',$post)->with('info','El post se actualizo con exito');
     }
 

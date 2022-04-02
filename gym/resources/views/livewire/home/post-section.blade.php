@@ -9,12 +9,14 @@
                 <div class="p-2 d-flex justify-content-between">
                     <div>
                         @php
-                        $user = \App\Http\Livewire\Home\PostSection::getUser($post->id);
+                        $user = \App\Http\Livewire\Home\PostSection::getUser($post->user_id);
+                        $categoria = \App\Http\Livewire\Home\PostSection::getCategoria($post->categoria_id);
                         @endphp
                         @if($user[0]->profile_photo_url)
                         <img src="{{$user[0]->profile_photo_url}}" class="rounded-circle" width="32px" height="32px" alt="">
                         @endif
-                        {{$user[0]->name}}
+                        {{$user[0]->name}}<br>
+                        {{$categoria[0]->name}}
                     </div>
                     <div>
                         <i class="fas fa-star color-skyblue-light"></i>

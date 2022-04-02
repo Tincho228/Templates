@@ -9,7 +9,7 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            {!! Form::open(['route' => 'admin.categorias.store']) !!}
+            {!! Form::open(['route' => 'admin.categorias.store','files'=>true]) !!}
                 
                 @include('admin.categorias.partials.form')
 
@@ -30,5 +30,14 @@
             space: '-'
   });
 });
+    document.getElementById('file').addEventListener('change', cambiarImagen);
+    function cambiarImagen(event){
+        var file = event.target.files[0];
+        let reader = new FileReader();
+        reader.onload = (event) => {
+            document.getElementById('picture').setAttribute('src', event.target.result);
+        }
+        reader.readAsDataURL(file);
+    }
     </script>
 @stop

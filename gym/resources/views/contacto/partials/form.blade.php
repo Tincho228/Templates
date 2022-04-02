@@ -7,7 +7,7 @@
 
                 <div class="card text-black mt-5" style="box-shadow:0px 6px 20px #000008; ">
                     <div class="card-header bg-black">
-                        <p class="h1 pt-3 title-font text-white">Contactanos</p>
+                        <p class="h1 pt-3 title-font text-white">Envianos un mensaje</p>
                         <p class="text-white" style="position:relative; top:-10px;left:5px;">No olvides compartir tu
                             plan
                         </p>

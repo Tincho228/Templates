@@ -28,31 +28,4 @@
     <span class="text-danger">{{$message}}</span>
     @enderror
 </div>
-<div class="row mb-3">
-    <div class="col">
-        <div class="img-wrapper">
 
-                @isset($post->image) 
-                    @if($post->image->url == 'placeholder')
-                        <img id="picture" class="img-fluid" src="https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
-                    @else
-                    <img id="picture" src="{{Storage::url($post->image->url)}}" class="img-fluid" alt="...">
-                    @endif
-                @else
-                    <img id="picture" class="img-fluid" src="https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
-                @endisset
-            
-        </div>
-    </div>
-    <div class="col">
-        <div class="form-group">
-            {!! Form::label('file','Imagen') !!}
-            {!! Form::file('file',['class'=>'form-control-file mb-3','accept'=>'image/*']) !!}
-            @error('file')
-            <span class="text-danger">{{$message}}</span>
-            @enderror
-            <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius possimus obcaecati delectus
-                exercitationem, accusamus eaque!</div>
-        </div>
-    </div>
-</div>

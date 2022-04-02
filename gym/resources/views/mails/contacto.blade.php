@@ -11,10 +11,9 @@
   </head>
   <body>
       <h1 class="text-center">Martin!! Tenés un Mensaje</h1>
-      <p class="text-center">Web hosting</p>
-      <div class="container bg-skyblue-middle" style="height:200px; ">
-        <img src="assets/logos/logo.png" alt="Logo Image">
-      </div>
+      <h3 class="text-center" style="color:cadetblue">My gym Web hosting</h3>
+      
+      <hr>
       <p>Datos de contacto</p>
       <p><strong>Nombre:</strong>{{$contacto['name']}}</p>
       <p><strong>Email:</strong>{{$contacto['email']}}</p>
@@ -23,7 +22,7 @@
         @foreach ($contacto['categorias'] as $contacto['categoria'])
           {{$contacto['categoria']}}
         @endforeach
-
+      <hr>
       </p>
       <p><strong>Mensaje:</strong>
       <p>{{$contacto['body']}}</p>

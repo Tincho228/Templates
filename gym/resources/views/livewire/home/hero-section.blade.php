@@ -1,5 +1,5 @@
-<div class="bg-skyblue-middle container-fluid">
-    <div class="container">
+<div class="bg-skyblue-middle container-fluid" style="padding-right:0px; padding-left:0px;">
+    <div class="container" style="padding-right:0px; padding-left:0px;">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
