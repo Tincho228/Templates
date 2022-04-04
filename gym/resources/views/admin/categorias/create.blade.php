@@ -13,7 +13,7 @@
                 
                 @include('admin.categorias.partials.form')
 
-                {!! Form::submit('Enviar formulario', ['class' => 'btn btn-sm btn-primary']) !!}
+                {!! Form::submit('Crear categoria', ['class' => 'btn btn-sm btn-primary']) !!}
             {!! Form::close() !!}
         </div>
     </div>

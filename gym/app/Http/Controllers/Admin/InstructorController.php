@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Instructor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class InstructorController extends Controller
 {
@@ -46,13 +47,25 @@ class InstructorController extends Controller
      */
     public function store(Request $request)
     {
-        
         $request ->validate([
             'name' => 'required',
-            'slug' => 'required|unique:instructors',
-            'description'=>'required'
+            'slug' => 'required|unique:categorias',
+            'description'=>'required',
+            'file'=>'image'
         ]);
         $instructor = Instructor::create($request->all());
+
+        if($request->file('file')){
+            $url = Storage::disk('public')->put('posts',$request->file('file'));
+            $instructor->image()->create([
+                'url'=> $url
+            ]);
+        }else {
+            $instructor->image()->create([
+                'url' =>'placeholder'
+            ]);
+        }
+        
         return redirect()->route('admin.instructors.edit', $instructor)->with('info', 'El instructor se ha creado con exito');
     }
 
@@ -78,6 +91,17 @@ class InstructorController extends Controller
         ]);
         $instructor->update($request->all());
 
+        if($request->file('file')){
+            $url = Storage::disk('public')->put('posts',$request->file('file'));
+
+            if($instructor->image){
+                Storage::disk('public')->delete('posts',$instructor->image->url);
+                $instructor->image->update([
+                    'url' => $url
+                ]);
+            }
+        }
+
         return redirect()->route('admin.instructors.edit', $instructor)->with('info', 'El instructor se actualizo con exito');
     }
 
@@ -89,8 +113,9 @@ class InstructorController extends Controller
      */
     public function destroy(Instructor $instructor)
     {
+        Storage::disk('public')->delete('posts', $instructor->image->url);
+        $instructor->image()->delete();
         $instructor->delete();
-        
         return redirect()->route('admin.instructors.index')->with('info', 'El instructor se eliminó con exito');
     }
 }

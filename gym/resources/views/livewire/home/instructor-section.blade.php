@@ -5,12 +5,13 @@
     <div class="row">
         @foreach ($instructors as $instructor)
         <div class="col-sm-12 col-md-4 mb-4">
+            <div class="sixteen-nine-img">
             @if($instructor->image->url == 'placeholder')
-                <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded-circle mb-3 img-fluid" alt="Imagen de instructor" style="width:200px; display:block;margin:auto; clip-path:circle()">
+                <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Imagen de instructor">
             @else
-                <img src="{{Storage::url($instructor->image->url)}}" class="rounded-circle mb-3 img-fluid" alt="Imagen de instructor" style="width:200px; display:block;margin:auto; clip-path:circle()">
+                <img src="{{Storage::url($instructor->image->url)}}" alt="Imagen de instructor">
             @endif
-            
+            </div>
             <h3 class="text-light mb-3 text-center">{{$instructor->name}}</h3>
             <P class="text-light text-center" style="padding:0px 20px;">{{$instructor->description}}</P>
             <div class="d-flex justify-content-center">
@@ -21,3 +22,22 @@
     </div>
     </div>
 </div>
+{{-- style="width:200px; display:block;margin:auto; clip-path:circle()" --}}
+<style>
+    .sixteen-nine-img {
+        width: 100%;
+        overflow: hidden;
+        margin: 0;
+        padding-top: 56.25%;
+        position: relative;
+        clip-path: circle();
+    }
+
+    .sixteen-nine-img img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+    }
+</style>

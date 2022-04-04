@@ -9,11 +9,11 @@
 @section('content')
 <div class="card">
         <div class="card-body">
-            {!! Form::open(['route' => 'admin.instructors.store']) !!}
+            {!! Form::open(['route' => 'admin.instructors.store','files'=>true]) !!}
                 
                 @include('admin.instructors.partials.form')
             
-                {!! Form::submit('Enviar formulario', ['class' => 'btn btn-sm btn-primary']) !!}
+                {!! Form::submit('Crear instructor', ['class' => 'btn btn-sm btn-primary']) !!}
             {!! Form::close() !!}
         </div>
     </div>
@@ -29,5 +29,14 @@
             space: '-'
   });
 });
+    document.getElementById('file').addEventListener('change', cambiarImagen);
+    function cambiarImagen(event){
+        var file = event.target.files[0];
+        let reader = new FileReader();
+        reader.onload = (event) => {
+            document.getElementById('picture').setAttribute('src', event.target.result);
+        }
+        reader.readAsDataURL(file);
+    }
     </script>
 @stop

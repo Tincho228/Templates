@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Categoria;
+use App\Models\Image;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -46,7 +47,6 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        
         $request ->validate([
             'name' => 'required',
             'slug' => 'required|unique:categorias',
@@ -114,6 +114,8 @@ class CategoriaController extends Controller
      */
     public function destroy(Categoria $categoria)
     {
+        Storage::disk('public')->delete('posts', $categoria->image->url);
+        $categoria->image()->delete();
         $categoria->delete();
         
         return redirect()->route('admin.categorias.index')->with('info', 'La categoria se eliminó con exito');
