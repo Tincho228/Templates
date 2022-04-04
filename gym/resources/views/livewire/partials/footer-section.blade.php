@@ -1,5 +1,5 @@
 <div class="container-fluid p-3 pb-2 bg-skyblue-middle text-light">
-    <img src="assets/logos/logo.png" alt="Logo" style="display:block; margin:30px auto;width:150px;">
+    <img src="{{ URL::asset("assets/logos/logo.png") }}" alt="Logo" style="display:block; margin:30px auto;width:150px;">
     <hr>
     <div class="container">
         <div class="row">

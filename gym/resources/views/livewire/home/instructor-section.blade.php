@@ -5,7 +5,7 @@
     <div class="row">
         @foreach ($instructors as $instructor)
         <div class="col-sm-12 col-md-4 mb-4">
-            <div class="sixteen-nine-img">
+            <div class="sixteen-nine-img mb-3">
             @if($instructor->image->url == 'placeholder')
                 <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Imagen de instructor">
             @else

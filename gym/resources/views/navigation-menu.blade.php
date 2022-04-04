@@ -3,14 +3,14 @@
     <div class="container d-flex align-items-center">
         <!-- Logo -->
         <a class="navbar-brand me-4" href="/">
-            <img src="assets/logos/logo.png" alt="">
+            <img src="{{ URL::asset("assets/logos/logo.png") }}" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="phone-link">
-            <a class="nav-item nav-link h3" href=""><i class="fal fa-phone"></i> 261 126252636</a>  
+            <a class="nav-item nav-link h3" href=""><i class="fas fa-phone-alt"></i> 261 126252636</a>  
         </div>
         
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">

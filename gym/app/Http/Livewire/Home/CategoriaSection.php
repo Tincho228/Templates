@@ -12,4 +12,5 @@ class CategoriaSection extends Component
         $categorias = Categoria::all();
         return view('livewire.home.categoria-section', compact('categorias'));
     }
+    
 }

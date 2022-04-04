@@ -1,7 +1,7 @@
-<div class="container-fluid pt-5 pb-5 bg-posts-skyblue">
+<div class="container-fluid pt-5 pb-5 bg-posts-skyblue" style="padding:0px">
     <h1 class="text-light text-center title-font">OPINIONES DE NUESTROS CLIENTES</h1>
     <p class="text-light text-center mb-5">Breve descripcion de esta seccion</p>
-    <div class="container">
+    <div class="">
         <div class="">
             <div class="owl-carousel owl-theme">
             @foreach($posts as $post)  
