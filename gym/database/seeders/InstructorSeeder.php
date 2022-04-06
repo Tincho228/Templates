@@ -18,10 +18,6 @@ class InstructorSeeder extends Seeder
     {
         $instructors = Instructor::factory(3)->create();
         foreach($instructors as $instructor){
-           /* Image::factory(1)->create([
-                'imageable_id' => $categoria->id,
-                'imageable_type' => Categoria::class
-            ]);*/
             Image::factory(1)->create([
                 'imageable_id' => $instructor->id,
                 'imageable_type' => Instructor::class

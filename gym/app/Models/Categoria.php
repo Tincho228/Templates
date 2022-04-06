@@ -23,4 +23,7 @@ class Categoria extends Model
     public function image(){
         return $this->morphOne(Image::class, 'imageable');
     }
+    public function gallery(){
+        return $this->morphOne(Gallery::class, 'imageable');
+    }
 }

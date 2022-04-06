@@ -36,18 +36,16 @@
                             <a class="btn btn-white" href="{{ route('home.index') }}">Volver</a>    
                             <a class="btn btn-yellow" href="">Solicitar</a>
                         </div>
-                        <div class="detail-new-product mt-5">
-                            @livewire('home.new-product-section')
-                        </div>
                     </div>
                 </div>
                 <hr>
                 <h3>Galeria</h3>
+                
                 <div class="d-flex">
-                    <div class="item-detail"><img class="img-fluid" src="{{URL::asset('assets/images/new-product.jpg')}}" alt=""></div>
-                    <div class="item-detail"><img class="img-fluid" src="{{URL::asset('assets/images/new-product.jpg')}}" alt=""></div>
-                    <div class="item-detail"><img class="img-fluid" src="{{URL::asset('assets/images/new-product.jpg')}}" alt=""></div>
-                    <div class="item-detail"><img class="img-fluid" src="{{URL::asset('assets/images/new-product.jpg')}}" alt=""></div>
+                    
+                    @foreach ($gallery as $photo)
+                        <div class="item-detail"><img class="img-fluid" src="{{Storage::url($photo->url)}}" alt="Photo"></div>  
+                    @endforeach
                 </div>
                 
             </div>
@@ -84,13 +82,7 @@
         background-color:yellow;
         color:black !important;
     }
-    .detail-new-product {
-        overflow: hidden;
-    }
-    .new-product-price {
-        width:20%;
-        right:50px;
-    }
+    
 </style>
 
 </x-app-layout>

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Categoria;
+use App\Models\Gallery;
 use App\Models\Image;
 use App\Models\Instructor;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -21,6 +22,10 @@ class CategoriaSeeder extends Seeder
         $categorias = Categoria::factory(6)->create();
         foreach($categorias as $categoria){
             Image::factory(1)->create([
+                'imageable_id' => $categoria->id,
+                'imageable_type' => Categoria::class
+            ]);
+            Gallery::factory(4)->create([
                 'imageable_id' => $categoria->id,
                 'imageable_type' => Categoria::class
             ]);
