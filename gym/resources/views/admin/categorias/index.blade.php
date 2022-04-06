@@ -3,7 +3,7 @@
 @section('title', 'Administrador')
 
 @section('content_header')
-<h1>Mostrar listas de categorias</h1>
+<h1>Lista de categorias</h1>
 @stop
 
 @section('content')
@@ -33,7 +33,7 @@
             <tbody>
                 @foreach ($categorias as $categoria)
                 <tr>
-                    <th scope="row">1</th>
+                    <th scope="row">{{$categoria->id}}</th>
                     <td>{{$categoria->name}}</td>
                     <td>{{$categoria->description}}</td>
                     <td>{{$categoria->price}}</td>

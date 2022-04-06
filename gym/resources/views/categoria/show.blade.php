@@ -44,7 +44,7 @@
                 <div class="d-flex">
                     
                     @foreach ($gallery as $photo)
-                        <div class="item-detail"><img class="img-fluid" src="{{Storage::url($photo->url)}}" alt="Photo"></div>  
+                        <div class="item-detail"><img class="img-fluid" src="{{Storage::url($photo->url)}}" alt="Photo"  onclick="cambiarImagen(this)"></div>  
                     @endforeach
                 </div>
                 
@@ -55,6 +55,12 @@
 <div>
 
 </div>
+<script>
+    function cambiarImagen(image){
+        document.getElementById('picture').setAttribute('src', image.src);
+    }
+    
+</script>
 <style>
     .item-detail {
         width:22%;

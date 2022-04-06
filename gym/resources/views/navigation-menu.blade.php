@@ -116,7 +116,7 @@
                     <x-slot name="content">
                         <!-- Account Management -->
                         <h6 class="dropdown-header small text-muted">
-                            {{ __('Manage Account') }}
+                            {{ __('Mi cuenta') }}
                         </h6>
 
                         <x-jet-dropdown-link href="{{ route('profile.show') }}">

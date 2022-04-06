@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Categoria;
 use App\Models\Image;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Gallery;
 
 
 class CategoriaController extends Controller
@@ -73,7 +74,8 @@ class CategoriaController extends Controller
 
     public function edit(Categoria $categoria)
     {
-        return view('admin.categorias.edit', compact('categoria'));
+        $gallery = Gallery::where('imageable_id',$categoria->id)->get();
+        return view('admin.categorias.edit', compact('categoria','gallery'));
     }
 
     /**
