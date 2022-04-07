@@ -4,7 +4,7 @@
             <h3 class="mt-3">Administrar Galeria</h3>
             <p>Lista de fotos</p>
             @if ($gallery)
-            <div class="d-flex flex-wrap">
+            <div class="d-flex flex-wrap ">
                 @foreach ($gallery as $photo)
                 <div class="item-detail"><img class="img-fluid" src="{{Storage::url($photo->url)}}" alt="Photo"
                         id="picture{{$photo->id}}"></div>
@@ -23,7 +23,7 @@
 
             @if ($form)
             
-            <div class="row mb-3">
+            <div class="row mb-3 mt-3">
                 <div class="col-sm-12 col-md-6">
                     <div class="img-wrapper">
                             <img id="picture" class="img-fluid" src="{{URL::asset('assets/images/placeholder.jpg')}}" alt="Photo image">            
@@ -31,11 +31,16 @@
                 </div>
                 <div class="col-sm-12 col-md-6 mt-3">
                     <div class="form-group">
-                        {!! Form::label('file','Imagen') !!}
-                        {!! Form::file('file',['class'=>'form-control-file mb-3','accept'=>'image/*']) !!}
-                        @error('file')
-                        <span class="text-danger">{{$message}}</span>
-                        @enderror
+                        <form wire:submit.prevent="store({{$categoria}})">
+                            <input type="file" wire:model="picture">
+                         
+                            @error('photo')
+                             <span class="text-danger">{{ $message }}</span> 
+                             @enderror
+                         
+                            <button type="submit">Save Photo</button>
+                        </form>
+                        
                         <div><span class="text-danger">Importante! </span>Las imagenes deben estar libre de licencia de copyright</div>
                     </div>
                 </div>
