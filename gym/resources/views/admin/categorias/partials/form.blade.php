@@ -33,7 +33,7 @@
 <!-- Image management -->
 
 <div class="row mb-3">
-    <div class="col">
+    <div class="col-sm-12 col-md-6">
         <div class="img-wrapper">
 
                 @isset($categoria->image) 
@@ -48,15 +48,14 @@
             
         </div>
     </div>
-    <div class="col">
+    <div class="col-sm-12 col-md-6 mt-3">
         <div class="form-group">
             {!! Form::label('file','Imagen') !!}
             {!! Form::file('file',['class'=>'form-control-file mb-3','accept'=>'image/*']) !!}
             @error('file')
             <span class="text-danger">{{$message}}</span>
             @enderror
-            <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius possimus obcaecati delectus
-                exercitationem, accusamus eaque!</div>
+            <div><span class="text-danger">Importante! </span>Las imagenes deben estar libre de licencia de copyright</div>
         </div>
     </div>
 </div>

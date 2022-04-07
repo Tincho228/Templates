@@ -20,24 +20,19 @@
 
                 {!! Form::submit('Actualizar categoria', ['class' => 'btn btn-sm btn-primary']) !!}
             {!! Form::close() !!}
-            
-            <h2 class="mt-3">Administrar Galeria</h2>
-            <p>Lista de fotos</p>
-            <div class="d-flex">
-                @foreach ($gallery as $photo)
-                    <div class="item-detail"><img class="img-fluid" src="{{Storage::url($photo->url)}}" alt="Photo"  onclick="cambiarImagen(this)"></div>  
-                @endforeach
-            </div>
+                
         </div>
         
 </div>
+@livewire('admin.gallery-index',['categoria' => $categoria, 'gallery' =>$gallery])
+
 @stop
 
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
     <style>
     .item-detail {
-        width:22%;
+        width:30%;
         margin:5px;
     }
     .img-wrapper img {
