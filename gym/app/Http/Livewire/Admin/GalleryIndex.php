@@ -10,7 +10,6 @@ class GalleryIndex extends Component
     use WithFileUploads;
     public $categoria;
     public $gallery;
-    public $form = false;
     public $picture;
     
     public function render()
@@ -20,12 +19,12 @@ class GalleryIndex extends Component
     public function showform($action)
     {
        /* show = showform(true)  hide = showform(false) */ 
-       $this->form = $action;
     }
     public function store($categoria){
-        $this->validate(
-            ['picture'=>'image']
-        );
-        dd($categoria['id']);
+        $this->validate([
+            'picture'=>'image'
+        ]);
+
+
     }
 }
