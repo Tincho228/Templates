@@ -35,27 +35,23 @@
     </div>
     
   
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  <x-dialog-modal>
+    <x-slot name="title">
+        Delete Account
+    </x-slot>
+    <x-slot name="content">
+        Are you sure you want to delete your account? Once your account is deleted, all of its resources and data will be permanently deleted.
+    </x-slot>
+    <x-slot name="footer">
+        <x-jet-secondary-button wire:click="$toggle('confirmingUserDeletion')" wire:loading.attr="disabled">
+            Nevermind
+        </x-jet-secondary-button>
+
+        <x-jet-danger-button class="ml-2" wire:click="deleteUser" wire:loading.attr="disabled">
+            Delete Account
+        </x-jet-danger-button>
+    </x-slot>
+  </x-dialog-modal>
 
 </div>
 
