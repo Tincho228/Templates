@@ -8,9 +8,12 @@ use Livewire\WithFileUploads;
 class GalleryIndex extends Component
 {
     use WithFileUploads;
+    public $title;
+    public $content;
     public $categoria;
     public $gallery;
     public $picture;
+    public $open = true;
     
     public function render()
     {

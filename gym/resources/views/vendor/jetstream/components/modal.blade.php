@@ -19,7 +19,6 @@ $maxWidth = [
     x-init="() => {
 
         let el = document.querySelector('#modal-id-{{ $id }}')
-
         let modal = new bootstrap.Modal(el);
 
         $watch('show', value => {
