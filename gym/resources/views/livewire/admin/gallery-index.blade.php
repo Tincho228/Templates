@@ -55,6 +55,10 @@
                     </div>
                     <div class="modal-body">
                         <form wire:submit.prevent="storePhoto">
+                            
+                        @if ($photo->temporaryUrl())
+                            
+                        @endif
                         <div class="form-group">
                             <label for="name">Nombre</label>
                             <input type="text" class="form-control" id="name" wire:model="name">
@@ -77,7 +81,7 @@
                             <div class="alert alert-danger">{{$message}}</div>
                         @enderror
 
-                        <button type="submit" class="btn btn-primary" wire:loading.attr="disabled">Save changes</button>
+                        <button type="submit" class="btn btn-primary" wire:loading.attr="disabled" data-dismiss="modal">Save changes</button>
                         </form>
                     </div>
                     
