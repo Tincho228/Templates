@@ -22,6 +22,31 @@
                                 alt="">
                             @endisset
                         </div>
+                        <hr>
+                        <h3>Galeria</h3>
+
+                        <div class="d-flex">
+                            @foreach ($gallery as $photo)
+                            <div class="item-detail"><img class="img-fluid" src="{{Storage::url($photo->url)}}"
+                                    alt="Photo" onclick="cambiarImagen(this)"></div>
+                            @endforeach
+                            <div class="item-detail">
+                            @isset($categoria->image)
+                                @if($categoria->image->url == 'placeholder')
+                                    <img class="img-fluid"
+                                        src="https://images.pexels.com/photos/669582/pexels-photo-669582.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                                        alt="Photo" onclick="cambiarImagen(this)">
+                                @else
+                                    <img src="{{Storage::url($categoria->image->url)}}" class="img-fluid"
+                                        alt="Imagen previa" onclick="cambiarImagen(this)">
+                                @endif
+                            @else
+                                <img class="img-fluid"
+                                        src="https://images.pexels.com/photos/669582/pexels-photo-669582.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                                        alt="Photo" onclick="cambiarImagen(this)">
+                            @endisset
+                            </div>
+                        </div>
                     </div>
                     <div class="col-sm-12 col-md-6">
                         <h1 class="title-font">{{$categoria->name}}</h1>
@@ -38,15 +63,7 @@
                         </div>
                     </div>
                 </div>
-                <hr>
-                <h3>Galeria</h3>
                 
-                <div class="d-flex">
-                    
-                    @foreach ($gallery as $photo)
-                        <div class="item-detail"><img class="img-fluid" src="{{Storage::url($photo->url)}}" alt="Photo"  onclick="cambiarImagen(this)"></div>  
-                    @endforeach
-                </div>
                 
             </div>
         </div>
@@ -65,6 +82,10 @@
     .item-detail {
         width:22%;
         margin:5px;
+        height:calc(width)
+    }
+    .img-fluid {
+        height:56.25% !important;
     }
     .img-wrapper img {
         border-radius: 5px;

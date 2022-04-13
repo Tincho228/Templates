@@ -25,7 +25,8 @@
         
 </div>
 
-@livewire('admin.gallery-index',['categoria' => $categoria, 'gallery' =>$gallery])
+@livewire('admin.gallery-index',['categoria' => $categoria])
+{{-- @livewire('admin.gallery-index',['categoria' => $categoria, 'gallery' =>$gallery]) --}}
 
 
 

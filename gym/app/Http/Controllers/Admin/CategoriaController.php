@@ -117,7 +117,14 @@ class CategoriaController extends Controller
     public function destroy(Categoria $categoria)
     {
         Storage::disk('public')->delete('posts', $categoria->image->url);
+        //obtain all the images by category
+        $gallery = Gallery::where('imageable_id',$categoria->id)->get();
+        
+        foreach($gallery as $photo){
+            Storage::disk('public')->delete('gallery', $photo->url);
+        }
         $categoria->image()->delete();
+        $categoria->gallery()->delete();
         $categoria->delete();
         
         return redirect()->route('admin.categorias.index')->with('info', 'La categoria se eliminó con exito');
