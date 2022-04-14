@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="container-fluid" style="background-image:url('{{URL::asset('assets/images/call-to-action.jpg')}}'); background-repeat:no-repeat; background-size:cover;background-position:center;">
-    <div class="container pt-5 pb-5">
+    <div class="container pt-5 pb-5" style="max-width:800px;">
         <div class="card">
             <div class="card-body">
                 <div class="row mb-3">
@@ -25,26 +25,27 @@
                         <hr>
                         <h3>Galeria</h3>
 
-                        <div class="d-flex">
+                        <div class="d-flex flex-wrap">
                             @foreach ($gallery as $photo)
-                            <div class="item-detail"><img class="img-fluid" src="{{Storage::url($photo->url)}}"
-                                    alt="Photo" onclick="cambiarImagen(this)"></div>
+                            <div class="item-detail">
+                                    <img class="img-fluid" src="{{Storage::url($photo->url)}}" alt="Photo" onclick="cambiarImagen(this)">
+                            </div>
                             @endforeach
                             <div class="item-detail">
-                            @isset($categoria->image)
-                                @if($categoria->image->url == 'placeholder')
-                                    <img class="img-fluid"
-                                        src="https://images.pexels.com/photos/669582/pexels-photo-669582.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                                        alt="Photo" onclick="cambiarImagen(this)">
+                                @isset($categoria->image)
+                                    @if($categoria->image->url == 'placeholder')
+                                        <img class="img-fluid"
+                                            src="https://images.pexels.com/photos/669582/pexels-photo-669582.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                                            alt="Photo" onclick="cambiarImagen(this)">
+                                    @else
+                                        <img src="{{Storage::url($categoria->image->url)}}" class="img-fluid"
+                                            alt="Imagen previa" onclick="cambiarImagen(this)">
+                                    @endif
                                 @else
-                                    <img src="{{Storage::url($categoria->image->url)}}" class="img-fluid"
-                                        alt="Imagen previa" onclick="cambiarImagen(this)">
-                                @endif
-                            @else
-                                <img class="img-fluid"
-                                        src="https://images.pexels.com/photos/669582/pexels-photo-669582.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                                        alt="Photo" onclick="cambiarImagen(this)">
-                            @endisset
+                                    <img class="img-fluid"
+                                            src="https://images.pexels.com/photos/669582/pexels-photo-669582.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                                            alt="Photo" onclick="cambiarImagen(this)">
+                                @endisset
                             </div>
                         </div>
                     </div>
@@ -79,16 +80,22 @@
     
 </script>
 <style>
-    .item-detail {
-        width:22%;
-        margin:5px;
-        height:calc(width)
+    
+    .item-detail{
+        width: 25%;
+        overflow: hidden;
+        padding:5px;
+        
     }
-    .img-fluid {
-        height:56.25% !important;
-    }
-    .img-wrapper img {
+    .item-detail-img {
+        width:100%;
+        
+    }    
+    .img-wrapper {
         border-radius: 5px;
+        overflow: hidden;
+        width: 100%;
+        height:56.25%;
     }
     .card {
         background-color:#ffffff57;
