@@ -28,11 +28,13 @@ class GalleryIndex extends Component
         session()->flash('info', 'La imagen se subio con exito');
 
         $this->reset(['image']);
+        // Cerrar el modal automaticamente
         $this->dispatchBrowserEvent('closeModal');
+        
         $this->emitTo('gallery-index','render');
         
         
-        // // Cerrar el modal automaticamente
+        
         
         
     }

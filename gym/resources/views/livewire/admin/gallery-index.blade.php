@@ -64,14 +64,9 @@
                             <img class="img-fluid mb-4" src="{{$image->temporaryUrl()}}" alt="">
                         @endif
                         
-                        <!--Small Caption-->
-                        <div>
-                            <img id="output">    
-                        </div>    
-
                         <div class="form-group">
                             <label for="image">Elegir una foto</label>
-                            <input type="file" class="form-control-file" id="image" wire:model="image" onload="process()">
+                            <input type="file" class="form-control-file" id="image" wire:model="image">
                         </div>
                         @error('image')
                             <div class="text-danger mb-4">{{$message}}</div>
@@ -89,17 +84,7 @@
         window.addEventListener('closeModal', event => {
             $("#exampleModal").modal('hide');                
         })
-        function process(){
-        const file = document.querySelector("#image").files;
-        console.log(file)
-        // const reader = new FileReader();
-        // reader.readAsDataURL(file);
-        // reader.onload = function (event) {
-        //         const imgElement = document.createElement('img');
-        //         imgElement.src = event.target.result;
-        //         document.querySelector("#output").src = event.target.result;
-        // }
-        }
+        
     </script>
     <style>
     .lds-roller {
