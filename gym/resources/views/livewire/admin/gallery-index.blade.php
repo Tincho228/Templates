@@ -3,41 +3,36 @@
             <h3 class="mt-3">Administrar Galeria</h3>
             <p>Lista de fotos</p>
             @if ($gallery)
-            <div class="d-flex flex-wrap ">
+            <div class="d-flex flex-wrap">
                 @foreach ($gallery as $photo)
-                <div class="item-detail"><img class="img-fluid" src="{{Storage::url($photo->url)}}" alt="Photo"
-                        id="picture{{$photo->id}}"></div>
+                <div class="item-detail" style="width: 25%;" >
+                    <img class="img-fluid" src="{{Storage::url($photo->url)}}" alt="Photo"
+                        id="picture{{$photo->id}}">
+                    <a class="d-flex justify-content-center h6  m-2 bg-light" >
+                        <i class="fas fa-trash-alt text-secondary icon-delete"></i>
+                    </a>
+                </div>
                 @endforeach
-                <div class="item-detail"
-                    style="overflow:hidden; position:relative; display:flex; justify-content:center; align-items:center">
-                    <img class="img-fluid" style="position:absolute;z-index:1 "
-                        src="{{URL::asset('assets/images/placeholder.jpg')}}" alt="Photo" id="picture{{$photo->id}}">
-                    <!-- Button trigger modal -->
-                    <button type="button" style="z-index:2; position:relative;" class="btn btn-sm btn-dark"
-                        data-toggle="modal" data-target="#exampleModal">
-                        <i class="fas fa-plus text-white"></i> Agregar
-                    </button>
-                </div>
-                {{-- Nuevo ratio --}}
-                <div class="ratio">
-                    <img src="" alt="">
-                </div>
             </div>
             @if (session()->has('info'))
                 <div class="alert alert-success">{{session('info')}}</div>
             @endif
+            <div class="card-footer">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-sm btn-info"
+                        data-toggle="modal" data-target="#exampleModal">
+                        <i class="fas fa-plus text-white"></i> Agregar foto
+                    </button>
+            </div>
             @else
             <div class="alert alert-secondary">
                 No hay fotos en esta galleria.
             </div>
-            <div class="item-detail"
-                style="overflow:hidden; position:relative; display:flex; justify-content:center; align-items:center">
-                <img class="img-fluid" style="position:absolute;z-index:1 "
-                    src="{{URL::asset('assets/images/placeholder.jpg')}}" alt="Photo" id="picture{{$photo->id}}">
+            <div class="card-footer">
                 <!-- Button trigger modal -->
-                <button type="button" style="z-index:2; position:relative;" class="btn btn-sm btn-dark"
+                <button type="button" class="btn btn-sm btn-info"
                     data-toggle="modal" data-target="#exampleModal">
-                    <i class="fas fa-plus text-white"></i> Agregar
+                    <i class="fas fa-plus text-white"></i> Agregar foto
                 </button>
             </div>
 
@@ -90,8 +85,19 @@
     </script>
 
 
-    <style>
+<style>
+    .item-detail {
+        position:relative;
+    }
+    .icon-delete {
+        display: none;
         
+    }
+    .item-detail:hover .icon-delete {
+        display:block;
+        transition: 0.5s;
+    }
+
     .lds-roller {
         display: inline-block;
         position: relative;
@@ -197,5 +203,5 @@
         }
     }
 
-    </style>
+</style>
     </div>
