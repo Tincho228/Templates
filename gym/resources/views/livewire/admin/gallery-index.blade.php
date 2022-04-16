@@ -18,7 +18,10 @@
                         <i class="fas fa-plus text-white"></i> Agregar
                     </button>
                 </div>
-                
+                {{-- Nuevo ratio --}}
+                <div class="ratio">
+                    <img src="" alt="">
+                </div>
             </div>
             @if (session()->has('info'))
                 <div class="alert alert-success">{{session('info')}}</div>
@@ -84,9 +87,11 @@
         window.addEventListener('closeModal', event => {
             $("#exampleModal").modal('hide');                
         })
-        
     </script>
+
+
     <style>
+        
     .lds-roller {
         display: inline-block;
         position: relative;

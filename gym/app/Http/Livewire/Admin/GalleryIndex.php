@@ -30,7 +30,7 @@ class GalleryIndex extends Component
         $this->reset(['image']);
         // Cerrar el modal automaticamente
         $this->dispatchBrowserEvent('closeModal');
-        
+
         $this->emitTo('gallery-index','render');
         
         

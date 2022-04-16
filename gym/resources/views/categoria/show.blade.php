@@ -6,18 +6,18 @@
                 <div class="row mb-3">
 
                     <div class="col-sm-12 col-md-6">
-                        <div class="img-wrapper mb-2 mt-2">
+                        <div class="ratio mb-2 mt-2">
                             @isset($categoria->image)
                             @if($categoria->image->url == 'placeholder')
-                            <img id="picture" class="img-fluid"
+                            <img id="picture" class="ratio__content"
                                 src="https://images.pexels.com/photos/669582/pexels-photo-669582.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                                 alt="">
                             @else
-                            <img id="picture" src="{{Storage::url($categoria->image->url)}}" class="img-fluid"
+                            <img id="picture" src="{{Storage::url($categoria->image->url)}}" class="ratio__content"
                                 alt="Imagen previa">
                             @endif
                             @else
-                            <img id="picture" class="img-fluid"
+                            <img id="picture" class="ratio__content"
                                 src="https://images.pexels.com/photos/669582/pexels-photo-669582.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                                 alt="">
                             @endisset
@@ -27,22 +27,22 @@
 
                         <div class="d-flex flex-wrap">
                             @foreach ($gallery as $photo)
-                            <div class="item-detail">
-                                    <img class="img-fluid" src="{{Storage::url($photo->url)}}" alt="Photo" onclick="cambiarImagen(this)">
+                            <div class="ratio" style="width:22%;">
+                                    <img class="ratio__content" src="{{Storage::url($photo->url)}}" alt="Photo" onclick="cambiarImagen(this)">
                             </div>
                             @endforeach
-                            <div class="item-detail">
+                            <div class="ratio" style="width:22%;">
                                 @isset($categoria->image)
                                     @if($categoria->image->url == 'placeholder')
-                                        <img class="img-fluid"
+                                        <img class="ratio__content"
                                             src="https://images.pexels.com/photos/669582/pexels-photo-669582.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                                             alt="Photo" onclick="cambiarImagen(this)">
                                     @else
-                                        <img src="{{Storage::url($categoria->image->url)}}" class="img-fluid"
+                                        <img src="{{Storage::url($categoria->image->url)}}" class="ratio__content"
                                             alt="Imagen previa" onclick="cambiarImagen(this)">
                                     @endif
                                 @else
-                                    <img class="img-fluid"
+                                    <img class="ratio__content"
                                             src="https://images.pexels.com/photos/669582/pexels-photo-669582.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                                             alt="Photo" onclick="cambiarImagen(this)">
                                 @endisset
@@ -80,23 +80,25 @@
     
 </script>
 <style>
-    
-    .item-detail{
-        width: 25%;
-        overflow: hidden;
-        padding:5px;
-        
+    .ratio {
+        display: block;
+        position: relative !important;
+        margin:5px;
     }
-    .item-detail-img {
-        width:100%;
-        
-    }    
-    .img-wrapper {
-        border-radius: 5px;
-        overflow: hidden;
+    .ratio::before {
+        content:'';
+        display: block;
         width: 100%;
-        height:56.25%;
+        padding-bottom:75%;
     }
+    .ratio__content {
+        position: absolute;
+        top:0;;
+        left:0;
+        width:100%;
+        height:100%;
+    }
+    
     .card {
         background-color:#ffffff57;
         color:whitesmoke;
