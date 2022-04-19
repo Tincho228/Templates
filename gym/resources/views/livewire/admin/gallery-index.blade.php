@@ -8,9 +8,9 @@
                 <div class="item-detail" style="width: 25%;" >
                     <img class="img-fluid" src="{{Storage::url($photo->url)}}" alt="Photo"
                         id="picture{{$photo->id}}">
-                    <a class="d-flex justify-content-center h6  m-2 bg-light" >
-                        <i class="fas fa-trash-alt text-secondary icon-delete"></i>
-                    </a>
+                    <div class="d-flex justify-content-center h6  m-2 bg-light" >
+                        <a data-toggle="modal" data-target="#deleteModal"><i class="fas fa-trash-alt text-secondary icon-delete" ></i></a>
+                    </div>
                 </div>
                 @endforeach
             </div>
@@ -40,8 +40,61 @@
             
         </div>
 
-        <!-- Modal -->
-        <div wire:ignore.self class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        <!-- Modal de subir foto -->
+        <x-simple-modal>
+            <x-slot name="target">
+                exampleModal
+            </x-slot>
+                
+
+            <x-slot name="title">
+                Subir foto a la galeria
+            </x-slot>
+
+            <x-slot name="content">
+                <form wire:submit.prevent="storePhoto">
+                    <!-- Loading placeholder -->
+                    <div wire:loading wire:target="image">
+                        <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>   
+                    </div>
+                    <!-- Image preview -->
+                    @if ($image)
+                        <img class="img-fluid mb-4" src="{{$image->temporaryUrl()}}" alt="">
+                    @endif
+                    
+                    <div class="form-group">
+                        <label for="image">Elegir una foto</label>
+                        <input type="file" class="form-control-file" id="image" wire:model="image">
+                    </div>
+                    @error('image')
+                        <div class="text-danger mb-4">{{$message}}</div>
+                    @enderror
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-secondary btn-sm" data-dismiss="modal" aria-label="Close">Cancelar</button>
+                        <button type="submit" class="btn btn-primary btn-sm" wire:loading.attr="disabled">Subir foto</button>
+                    </div>
+                </form>
+            </x-slot>
+
+        </x-simple-modal>
+        <!-- Modal de eliminar foto -->
+        <x-simple-modal>
+            <x-slot name="target">
+                deleteModal
+            </x-slot>
+                
+
+            <x-slot name="title">
+                Eliminar Foto
+            </x-slot>
+
+            <x-slot name="content">
+                <h3>Esta seguro que desea eliminar la foto?</h3>
+            </x-slot>
+
+        </x-simple-modal>
+        {{-- <div wire:ignore.self class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -70,13 +123,17 @@
                             <div class="text-danger mb-4">{{$message}}</div>
                         @enderror
 
-                        <button type="submit" class="btn btn-primary" wire:loading.attr="disabled">Save changes</button>
-                        </form>
+                        
+                        
                     </div>
-                    
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-secondary btn-sm" data-dismiss="modal" aria-label="Close">Subir foto</button>
+                            <button type="submit" class="btn btn-primary btn-sm" wire:loading.attr="disabled">Cancelar</button>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </div>
+        </div> --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         window.addEventListener('closeModal', event => {
