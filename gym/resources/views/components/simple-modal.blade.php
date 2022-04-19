@@ -1,9 +1,3 @@
-{{-- @php
-$id = $id ?? md5($attributes->wire('model'));
-
-
-@endphp --}}
-
 <div wire:ignore.self class="modal fade" id="{{$target}}" tabindex="-1" role="dialog"
     aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">

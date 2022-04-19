@@ -8,8 +8,8 @@
                 <div class="item-detail" style="width: 25%;" >
                     <img class="img-fluid" src="{{Storage::url($photo->url)}}" alt="Photo"
                         id="picture{{$photo->id}}">
-                    <div class="d-flex justify-content-center h6  m-2 bg-light" >
-                        <a data-toggle="modal" data-target="#deleteModal"><i class="fas fa-trash-alt text-secondary icon-delete" ></i></a>
+                    <div class="h6" style="position: absolute; bottom:10px; left:10px;">
+                        <i class="fas fa-trash-alt text-white icon-delete" data-toggle="modal" data-target="#deleteModal" ></i>
                     </div>
                 </div>
                 @endforeach
@@ -83,8 +83,7 @@
             <x-slot name="target">
                 deleteModal
             </x-slot>
-                
-
+            
             <x-slot name="title">
                 Eliminar Foto
             </x-slot>
