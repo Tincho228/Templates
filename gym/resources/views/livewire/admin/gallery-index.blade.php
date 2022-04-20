@@ -3,15 +3,19 @@
             <h3 class="mt-3">Administrar Galeria</h3>
             <p>Lista de fotos</p>
             @if ($gallery)
-            <div class="d-flex flex-wrap">
+            <div class="row">
                 @foreach ($gallery as $photo)
-                <div class="item-detail" style="width: 25%;" >
-                    <img class="img-fluid" src="{{Storage::url($photo->url)}}" alt="Photo"
+                <div class="col-sm-6 col-lg-3">
+                <div class="item__container">
+                    <img class="item__img" src="{{Storage::url($photo->url)}}" alt="Photo"
                         id="picture{{$photo->id}}">
-                    <div class="h6" style="position: absolute; bottom:10px; left:10px;">
-                        <i class="fas fa-trash-alt text-white icon-delete" data-toggle="modal" data-target="#deleteModal" ></i>
+                    <div class="item__overlay">
+                        <p><i class="fas fa-trash-alt text-white icon-delete"  ></i> Borrar imagen? </p>
+                        <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#deleteModal">Borrar</button>
+                        
                     </div>
                 </div>
+            </div>
                 @endforeach
             </div>
             @if (session()->has('info'))
@@ -142,17 +146,49 @@
 
 
 <style>
-    .item-detail {
-        position:relative;
+    .item__container{
+        position: relative;
+        margin:5px;
     }
-    .icon-delete {
-        display: none;
+    .item__img {
+        display: block;
+        width: 100%;
+    }
+    .item__overlay {
+        position: absolute;
+        top:0px;
+        left:0;
+        height: 100%;
+        width: 100%;
+        background:rgba(0,0,0,0.6);
+        color: whitesmoke;
+        display:flex;
+        flex-direction: column;
+        align-items:center;
+        justify-content: center; 
+        opacity: 0;
+        transition: 0.5s;
         
     }
-    .item-detail:hover .icon-delete {
-        display:block;
-        transition: 0.5s;
+    .item__overlay:hover {
+        opacity: 1;
+        transition:0.5;
     }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    /* Loading spinner */
+
 
     .lds-roller {
         display: inline-block;
