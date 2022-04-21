@@ -40,7 +40,19 @@ class GalleryIndex extends Component
         $this->photo_delete_id = $id;
         $this->dispatchBrowserEvent('show-deleteConfirmation');
     }
-    
+    public function deletePhoto()
+    {
+        $photo = Gallery::where('id',$this->photo_delete_id)->first();
+        Storage::disk('public')->delete('galleries',$photo->url);
+        $photo->delete();
+        session()->flash('info', 'La imagen se eliminó con exito');
+        $this->dispatchBrowserEvent('closeModal');
+        $this->emitTo('gallery-index','render');
+    }
+    public function cancel()
+    {
+        $this->photo_delete_id = '';
+    }
     public function render()
     {
         $this->gallery = Gallery::where('imageable_id',$this->categoria->id)->get();

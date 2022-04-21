@@ -2,7 +2,7 @@
         <div class="card-body">
             <h3 class="mt-3">Administrar Galeria</h3>
             <p>Lista de fotos</p>
-            @if ($gallery)
+            @if ($gallery->count()>0)
             <div class="row">
                 @foreach ($gallery as $photo)
                 <div class="col-sm-6 col-lg-3">
@@ -10,7 +10,7 @@
                     <img class="item__img" src="{{Storage::url($photo->url)}}" alt="Photo"
                         id="picture{{$photo->id}}">
                     <div class="item__overlay">
-                        <p><i class="fas fa-trash-alt text-white icon-delete"  ></i> Borrar imagen? {{$photo->id}}</p>
+                        <p><i class="fas fa-trash-alt text-white icon-delete"  ></i> Borrar imagen?</p>
                         <button type="button" class="btn btn-outline-light" wire:click="deleteConfirmation({{$photo->id}})">Borrar</button>
                     </div>
                 </div>
@@ -92,52 +92,13 @@
             </x-slot>
 
             <x-slot name="content">
-                <p>Esta seguro que desea eliminar la foto? {{$photo_delete_id}}</p>
-                <button type="submit" class="btn btn-danger btn-sm mr-2" >Cancelar</button>
-                <button type="submit" class="btn btn-danger btn-sm mr-2" >Eliminar</button>  
+                <p>Esta seguro que desea eliminar la foto?</p>
+                <button type="submit" class="btn btn-danger btn-sm mr-2" wire:click="cancel()" class="close" data-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-danger btn-sm mr-2" wire:click="deletePhoto()" >Eliminar</button>  
             </x-slot>
 
         </x-simple-modal>
-        {{-- <div wire:ignore.self class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Subir foto a la galeria</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form wire:submit.prevent="storePhoto">
-                        <!-- Loading placeholder -->
-                        <div wire:loading wire:target="image">
-                            <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>   
-                        </div>
-                        <!-- Image preview -->
-                        @if ($image)
-                            <img class="img-fluid mb-4" src="{{$image->temporaryUrl()}}" alt="">
-                        @endif
-                        
-                        <div class="form-group">
-                            <label for="image">Elegir una foto</label>
-                            <input type="file" class="form-control-file" id="image" wire:model="image">
-                        </div>
-                        @error('image')
-                            <div class="text-danger mb-4">{{$message}}</div>
-                        @enderror
-
-                        
-                        
-                    </div>
-                        <div class="modal-footer">
-                            <button type="submit" class="btn btn-secondary btn-sm" data-dismiss="modal" aria-label="Close">Subir foto</button>
-                            <button type="submit" class="btn btn-primary btn-sm" wire:loading.attr="disabled">Cancelar</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div> --}}
+        
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         window.addEventListener('closeModal', event => {

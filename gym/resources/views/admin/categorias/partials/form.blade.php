@@ -39,6 +39,9 @@
                 @isset($categoria->image) 
                     @if($categoria->image->url == 'placeholder')
                         <img id="picture" class="img-fluid" src="https://images.pexels.com/photos/669582/pexels-photo-669582.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                        <div class="bg-dark text-center p-2"> 
+                            Sin imagen
+                        </div>
                     @else
                     <img id="picture" src="{{Storage::url($categoria->image->url)}}" class="img-fluid" alt="Imagen previa">
                     @endif

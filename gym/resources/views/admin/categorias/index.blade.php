@@ -16,48 +16,42 @@
 
 <div class="card">
     <div class="card-header">
-    <a class="btn btn btn-info btn-sm float-right" href="{{route('admin.categorias.create')}}">Crear categoria</a>
-    </div>
-    <div class="card-body">
-
-        <table class="table table-striped table-responsive">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Descripcion</th>
-                    <th scope="col">Precio</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                @foreach ($categorias as $categoria)
-                <tr>
-                    <th scope="row">{{$categoria->id}}</th>
-                    <td>{{$categoria->name}}</td>
-                    <td>{{$categoria->description}}</td>
-                    <td>{{$categoria->price}}</td>
-                    <td><a class="btn btn-sm btn-secondary" href="{{route('admin.categorias.edit', $categoria)}}">Editar</a></td>
-                    <td>
-                        <form action="{{route('admin.categorias.destroy', $categoria)}}" method="POST">
-                            @csrf 
-                            @method('delete')
-                            <button type="submit" class="btn btn-danger btn-sm mr-2">Eliminar</button>
-                        </form>
-                
-                    </td>
-                </tr>
-                @endforeach
-            </tbody>
-
-        </table>
+        <a class="btn btn btn-info btn-sm float-right" href="{{route('admin.categorias.create')}}">Crear categoria</a>
+        </div>
+    <div class="card-body d-flex flex-wrap ">
+        @foreach ($categorias as $categoria)
+        <div class="card m-1" style="width: 18rem;">
+            @if ($categoria->image->url == "placeholder")
+            <img class="card-img-top" src="https://images.pexels.com/photos/669582/pexels-photo-669582.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Card image cap">    
+            <div class="bg-dark text-center p-2"> 
+                Sin imagen
+            </div>
+            @else
+            <img class="card-img-top" src="{{Storage::URL($categoria->image->url)}}" alt="Card image cap">
+            
+            @endif
+            
+            <div class="card-body">
+                <h5 class="card-title">{{$categoria->id}} - <strong>Nombre:</strong> {{$categoria->name}}</h5>
+                <p class="card-text"><strong>Descripcion:</strong> {{$categoria->description}}</p>
+                <p class="card-text"><strong>Precio:</strong> {{$categoria->price}}</p>
+            </div>
+            <div class="card-footer d-flex justify-content-end">
+                <a class="btn btn-sm btn-secondary mr-1" href="{{route('admin.categorias.edit', $categoria)}}">Editar</a>
+                <form action="{{route('admin.categorias.destroy', $categoria)}}" method="POST">
+                    @csrf 
+                    @method('delete')
+                    <button type="submit" class="btn btn-danger btn-sm mr-2">Eliminar</button>
+                </form>
+            </div>
+        </div>
+        @endforeach
     </div>
 </div>
-
 @stop
 
 @section('css')
-<link rel="stylesheet" href="/css/admin_custom.css">
+
 @stop
 
 @section('js')

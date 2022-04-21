@@ -9,17 +9,11 @@
                         <div class="ratio mb-2 mt-2">
                             @isset($categoria->image)
                             @if($categoria->image->url == 'placeholder')
-                            <img id="picture" class="ratio__content"
-                                src="https://images.pexels.com/photos/669582/pexels-photo-669582.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                                alt="">
+                            <div id="picture" class="ratio__content"
+                                style="background-image:url('https://images.pexels.com/photos/669582/pexels-photo-669582.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')"></div>
                             @else
-                            <img id="picture" src="{{Storage::url($categoria->image->url)}}" class="ratio__content"
-                                alt="Imagen previa">
+                            <div id="picture" class="ratio__content" style="background-image:url('{{Storage::url($categoria->image->url)}}')" class="ratio__content"></div>
                             @endif
-                            @else
-                            <img id="picture" class="ratio__content"
-                                src="https://images.pexels.com/photos/669582/pexels-photo-669582.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                                alt="">
                             @endisset
                         </div>
                         <hr>
@@ -75,11 +69,17 @@
 </div>
 <script>
     function cambiarImagen(image){
-        document.getElementById('picture').setAttribute('src', image.src);
+        var picture = document.getElementById('picture')
+        console.log(picture)
+        picture.style.backgroundImage = "url("+image.src+")";   
     }
     
 </script>
 <style>
+    #picture {
+        background-size: cover;
+        background-position: center;
+    }
     .ratio {
         display: block;
         position: relative !important;
