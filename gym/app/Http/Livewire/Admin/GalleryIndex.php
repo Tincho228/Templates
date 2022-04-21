@@ -13,6 +13,7 @@ class GalleryIndex extends Component
     public $image;
     public $categoria;
     public $gallery;
+    public $photo_delete_id;
     protected $rules = [
              'image' =>'image'
     ];
@@ -32,11 +33,12 @@ class GalleryIndex extends Component
         $this->dispatchBrowserEvent('closeModal');
 
         $this->emitTo('gallery-index','render');
-        
-        
-        
-        
-        
+         
+    }
+    public function deleteConfirmation($id)
+    {
+        $this->photo_delete_id = $id;
+        $this->dispatchBrowserEvent('show-deleteConfirmation');
     }
     
     public function render()

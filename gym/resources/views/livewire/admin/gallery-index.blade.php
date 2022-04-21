@@ -10,9 +10,8 @@
                     <img class="item__img" src="{{Storage::url($photo->url)}}" alt="Photo"
                         id="picture{{$photo->id}}">
                     <div class="item__overlay">
-                        <p><i class="fas fa-trash-alt text-white icon-delete"  ></i> Borrar imagen? </p>
-                        <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#deleteModal">Borrar</button>
-                        
+                        <p><i class="fas fa-trash-alt text-white icon-delete"  ></i> Borrar imagen? {{$photo->id}}</p>
+                        <button type="button" class="btn btn-outline-light" wire:click="deleteConfirmation({{$photo->id}})">Borrar</button>
                     </div>
                 </div>
             </div>
@@ -85,15 +84,17 @@
         <!-- Modal de eliminar foto -->
         <x-simple-modal>
             <x-slot name="target">
-                deleteModal
+                deleteConfirmationModal
             </x-slot>
             
             <x-slot name="title">
-                Eliminar Foto
+                Eliminar Foto 
             </x-slot>
 
             <x-slot name="content">
-                <h3>Esta seguro que desea eliminar la foto?</h3>
+                <p>Esta seguro que desea eliminar la foto? {{$photo_delete_id}}</p>
+                <button type="submit" class="btn btn-danger btn-sm mr-2" >Cancelar</button>
+                <button type="submit" class="btn btn-danger btn-sm mr-2" >Eliminar</button>  
             </x-slot>
 
         </x-simple-modal>
@@ -140,7 +141,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         window.addEventListener('closeModal', event => {
-            $("#exampleModal").modal('hide');                
+            $("#exampleModal").modal('hide');    
+            $("#deleteConfirmationModal").modal('hide');             
+        })
+        window.addEventListener('show-deleteConfirmation', event => {
+            console.log("show")
+            $("#deleteConfirmationModal").modal('show');                
         })
     </script>
 
