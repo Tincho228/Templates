@@ -93,7 +93,7 @@
 
             <x-slot name="content">
                 <p>Esta seguro que desea eliminar la foto?</p>
-                <button type="submit" class="btn btn-danger btn-sm mr-2" wire:click="cancel()" class="close" data-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-secondary btn-sm mr-2" wire:click="cancel()" class="close" data-dismiss="modal">Cancelar</button>
                 <button type="submit" class="btn btn-danger btn-sm mr-2" wire:click="deletePhoto()" >Eliminar</button>  
             </x-slot>
 
