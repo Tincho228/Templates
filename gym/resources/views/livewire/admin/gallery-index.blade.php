@@ -106,7 +106,6 @@
             $("#deleteConfirmationModal").modal('hide');             
         })
         window.addEventListener('show-deleteConfirmation', event => {
-            console.log("show")
             $("#deleteConfirmationModal").modal('show');                
         })
     </script>

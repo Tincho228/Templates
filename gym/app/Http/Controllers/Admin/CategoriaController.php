@@ -12,6 +12,9 @@ use App\Models\Gallery;
 
 class CategoriaController extends Controller
 {
+    public $categoria_delete_id;
+
+
     public function __construct()
     {
         $this->middleware('can:admin.categorias.index')->only('index');
@@ -114,6 +117,13 @@ class CategoriaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function deleteConfirmation($id){
+        $this->categoria_delete_id = $id;
+        $this->dispatchBrowserEvent('show-deleteConfirmation');
+        dd($id);
+    }
+
+
     public function destroy(Categoria $categoria)
     {
         Storage::disk('public')->delete('posts', $categoria->image->url);

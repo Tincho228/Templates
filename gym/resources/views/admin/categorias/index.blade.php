@@ -39,11 +39,12 @@
                     <td>{{$categoria->price}}</td>
                     <td><a class="btn btn-sm btn-secondary" href="{{route('admin.categorias.edit', $categoria)}}">Editar</a></td>
                     <td>
-                        <form action="{{route('admin.categorias.destroy', $categoria)}}" method="POST">
+                        <button type="button" class="btn btn-sm btn-danger" wire:click="deleteConfirmation({{$categoria->id}})">Borrar</button>
+                        {{-- <form action="{{route('admin.categorias.destroy', $categoria)}}" method="POST">
                             @csrf 
                             @method('delete')
                             <button type="submit" class="btn btn-danger btn-sm mr-2">Eliminar</button>
-                        </form>
+                        </form> --}}
                 
                     </td>
 
