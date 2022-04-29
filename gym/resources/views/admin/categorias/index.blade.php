@@ -33,29 +33,32 @@
             <tbody>
                 @foreach ($categorias as $categoria)
                 <tr>
-                    <th scope="row">1</th>
+                    <td>{{$categoria->id}}</td>
                     <td>{{$categoria->name}}</td>
                     <td>{{$categoria->description}}</td>
                     <td>{{$categoria->price}}</td>
                     <td><a class="btn btn-sm btn-secondary" href="{{route('admin.categorias.edit', $categoria)}}">Editar</a></td>
                     <td>
-                        <button type="button" class="btn btn-sm btn-danger" wire:click="deleteConfirmation({{$categoria->id}})">Borrar</button>
+                        <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteCategory{{$categoria->id}}">Borrar</button>
                         {{-- <form action="{{route('admin.categorias.destroy', $categoria)}}" method="POST">
                             @csrf 
                             @method('delete')
                             <button type="submit" class="btn btn-danger btn-sm mr-2">Eliminar</button>
-                        </form> --}}
-                
+                        </form> --}}                
                     </td>
-
-
                 </tr>
+                @include('admin.categorias.partials.modal-delete')
                 @endforeach
             </tbody>
 
         </table>
-    </div>
+
+  
+  
+  </div>
 </div>
+ 
+
 @stop
 
 @section('css')
@@ -63,8 +66,8 @@
 @stop
 
 @section('js')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
-    console.log('Hi!');
 
 </script>
 @stop
