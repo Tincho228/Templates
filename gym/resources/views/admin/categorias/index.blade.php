@@ -20,7 +20,7 @@
         </div>
     <div class="card-body">
 
-        <table class="table table-striped table-responsive">
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th scope="col">id</th>
@@ -37,14 +37,9 @@
                     <td>{{$categoria->name}}</td>
                     <td>{{$categoria->description}}</td>
                     <td>{{$categoria->price}}</td>
-                    <td><a class="btn btn-sm btn-secondary" href="{{route('admin.categorias.edit', $categoria)}}">Editar</a></td>
-                    <td>
-                        <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteCategory{{$categoria->id}}">Borrar</button>
-                        {{-- <form action="{{route('admin.categorias.destroy', $categoria)}}" method="POST">
-                            @csrf 
-                            @method('delete')
-                            <button type="submit" class="btn btn-danger btn-sm mr-2">Eliminar</button>
-                        </form> --}}                
+                    <td width="10px"><a class="btn btn-sm btn-secondary" href="{{route('admin.categorias.edit', $categoria)}}">Editar</a></td>
+                    <td width="10px">
+                        <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteCategory{{$categoria->id}}">Borrar</button>               
                     </td>
                 </tr>
                 @include('admin.categorias.partials.modal-delete')

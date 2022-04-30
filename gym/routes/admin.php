@@ -11,7 +11,7 @@ use App\Http\Livewire\Admin\GalleryIndex;
 
 Route::get('', [HomeController::class, 'index'])->middleware('can:admin.home')->name('admin.home');
 
-Route::resource('users',UserController::class)->only(['index','edit','update'])->names('admin.users');
+Route::resource('users',UserController::class)->only(['index','edit','update','destroy'])->names('admin.users');
 
 Route::resource('roles', RoleController::class)->names('admin.roles');
 

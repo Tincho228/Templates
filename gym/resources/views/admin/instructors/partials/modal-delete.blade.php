@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="deleteCategory{{$instructor->id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="deleteInstructor{{$instructor->id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">

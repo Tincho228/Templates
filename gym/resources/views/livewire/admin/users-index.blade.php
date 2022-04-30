@@ -24,9 +24,13 @@
                         <td>{{$user->name}}</td>
                         <td>{{$user->email}}</td>
                         <td width="10px">
-                            <a class="btn btn-primary" href="{{route('admin.users.edit',$user)}}">Editar</a>
+                            <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteUser{{$user->id}}">Eliminar</button>
+                        </td>
+                        <td width="10px">
+                            <a class="btn btn-primary btn-sm" href="{{route('admin.users.edit',$user)}}">Editar</a>
                         </td>
                     </tr>
+                    @include('admin.users.partials.modal-delete')
                     @endforeach
 
                 </tbody>

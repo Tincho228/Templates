@@ -19,7 +19,7 @@
     </div>
     <div class="card-body">
 
-        <table class="table table-striped table-responsive">
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -36,18 +36,12 @@
                     <td>{{$instructor->name}}</td>
                     <td>{{$instructor->slug}}</td>
                     <td>{{$instructor->description}}</td>
-                    <td><a class="btn btn-sm btn-secondary" href="{{route('admin.instructors.edit', $instructor)}}">Editar</a></td>
-                    <td>
-                        <form action="{{route('admin.instructors.destroy', $instructor)}}" method="POST">
-                            @csrf 
-                            @method('delete')
-                            <button type="submit" class="btn btn-danger btn-sm mr-2">Eliminar</button>
-                        </form>
-                
+                    <td width="10px"><a class="btn btn-sm btn-secondary" href="{{route('admin.instructors.edit', $instructor)}}">Editar</a></td>
+                    <td width="10px">
+                        <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteInstructor{{$instructor->id}}">Eliminar</button>
                     </td>
-
-
                 </tr>
+                @include('admin.instructors.partials.modal-delete')
                 @endforeach
             </tbody>
 
