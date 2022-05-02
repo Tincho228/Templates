@@ -1,0 +1,23 @@
+#counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.simply-section {
+    background-color:#ebf4ff;
+    width:22%;
+    margin:10px 5px;
+    padding:20px;
+    display: flex;
+    justify-content: center;
+    text-align:center;
+    border-radius: 5px;
+}
+.simply-amount {
+    display: block;
+    font-size: 40px;
+}
+.simply-word {
+    font-size: 12px;
+}

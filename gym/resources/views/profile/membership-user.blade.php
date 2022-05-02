@@ -20,6 +20,7 @@
             <h3 class="h5 font-weight-bold">
                 {{ __('Duracion de membresia') }}
         </h3>
+        <div id="counter"></div>
         <p class="mt-3">
             <strong>Nota: </strong>{{ __('Una vez vencida tu membresia, el administrador puede eliminar tu cuenta pasados los treinta dias.') }}
         </p>

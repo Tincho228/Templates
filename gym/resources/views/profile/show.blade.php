@@ -36,4 +36,7 @@
         @endif
     </div>
 </div>
+<script src="{{URL::asset('js/simplyCountdown.min.js')}}"></script>
+<script src="{{URL::asset('js/countdown.js')}}"></script>
+<link rel="stylesheet" href="{{URL::asset('css/counter.css')}}">    
 </x-app-layout>
