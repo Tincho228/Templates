@@ -17,8 +17,8 @@
     <div class="card-header">
     <a class="btn btn btn-info btn-sm" href="{{route('admin.instructors.create')}}">Agregar instructor</a>
     </div>
+    @if ($instructors->count())
     <div class="card-body">
-
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -28,7 +28,6 @@
                     <th scope="col">Descripcion</th>
                 </tr>
             </thead>
-
             <tbody>
                 @foreach ($instructors as $instructor)
                 <tr>
@@ -44,9 +43,16 @@
                 @include('admin.instructors.partials.modal-delete')
                 @endforeach
             </tbody>
-
         </table>
     </div>
+    @else
+    <div class="card-body">
+        <div class="alert alert-secondary">
+            No hay instructores.
+        </div>
+    </div>    
+    @endif
+    
 </div>
 @stop
 

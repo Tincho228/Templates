@@ -18,8 +18,8 @@
     <div class="card-header">
         <a class="btn btn btn-info btn-sm float-right" href="{{route('admin.categorias.create')}}">Crear categoria</a>
         </div>
+    @if($categorias->count())
     <div class="card-body">
-
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -51,6 +51,11 @@
   
   
   </div>
+    @else
+    <div class="card-body">
+        <div class="alert alert-secondary">No hay categorias</div>
+    </div>
+    @endif
 </div>
  
 

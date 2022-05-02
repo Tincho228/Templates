@@ -16,8 +16,6 @@
                             <img src="{{$user[0]->profile_photo_url}}" class="profile-image" width="32px" height="32px"
                                 alt="Image">
                             @endif
-                            
-                            
                         </div>
                         <span style="font-weight: bold">{{$user[0]->name}}</span>
                         <div>
@@ -39,7 +37,9 @@
             
             @endforeach
             </div>
-            
+            @can('admin.posts.create')
+                Podes crear un post
+            @endcan
             <!-- Jquery links -->
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
             <script src="js/jquery.min.js"></script>

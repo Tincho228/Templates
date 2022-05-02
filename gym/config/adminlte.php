@@ -45,9 +45,9 @@ return [
     |
     */
 
-    'logo' => '<b>MY PAGE</b>',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-    'logo_img_class' => 'brand-image img-circle elevation-3',
+    'logo' => '<b>Mi Pagina</b>',
+    'logo_img' => 'assets/logos/logo.png',
+    'logo_img_class' => 'brand-image elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
     'logo_img_alt' => 'AdminLTE',
@@ -262,7 +262,7 @@ return [
             'text'        => 'Lista de roles',
             'route'         => 'admin.roles.index',
             'icon'        => 'fas fa-users-cog fa-fw',
-            //'can'         => 'admin.users.index',
+            'can'         => 'admin.users.index',
         ],
         [
             'text' => 'Categorias',
