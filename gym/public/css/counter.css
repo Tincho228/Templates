@@ -21,3 +21,6 @@
 .simply-word {
     font-size: 12px;
 }
+#counter_alert {
+    display: none;
+}
