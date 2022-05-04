@@ -9,12 +9,10 @@
 
     <x-slot name="content">
         <h3 class="h5 font-weight-bold">
-                {{ __('Plan Mensual') }} <strong class="text-success">Activo</strong>
+                {{ __('Plan ') }} 
         </h3>
-
-        <p class="mt-3">
-            {{ __('YOGA') }}
-        </p>
+        <h3><span class="mt-3 badge bg-black">{{ __('YOGA') }}</span>  <span class="badge bg-primary">Mensual</span>  <strong class="badge bg-success">Activo</strong></h3>
+        
 
         <div class="mt-3">
             <h3 class="h5 font-weight-bold">
@@ -29,6 +27,6 @@
                 <strong>Nota: </strong>{{ __('Una vez vencida tu membresia, el administrador puede eliminar tu cuenta pasados los treinta dias.') }}
             </p>
         </div>
-       
+    
     </x-slot>
 </x-jet-action-section>
