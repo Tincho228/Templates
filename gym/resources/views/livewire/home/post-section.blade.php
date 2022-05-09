@@ -37,10 +37,6 @@
             
             @endforeach
             </div>
-            @can('admin.posts.create')
-            <img src="{{Auth::user()->profile_photo_url}}" class="profile-image" width="32px" height="32px" alt="Image">
-            Hacer un comentario
-            @endcan
             <!-- Jquery links -->
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
             <script src="js/jquery.min.js"></script>

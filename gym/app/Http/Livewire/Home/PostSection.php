@@ -10,18 +10,20 @@ use Livewire\Component;
 
 class PostSection extends Component
 {
-    
+    public $test = "nada";
     public function render()
     {
         $users = User::all();
         $posts = Post::all();
         return view('livewire.home.post-section',compact('posts','users'));
     }
-    public function getUser($post){
+    public function getUser($post)
+    {
         $user = User::where('id',$post)->get();
         return new Collection($user);
     }
-    public function getCategoria($post){
+    public function getCategoria($post)
+    {
         $categoria = Categoria::where('id',$post)->get();
         return new Collection($categoria);
     }
