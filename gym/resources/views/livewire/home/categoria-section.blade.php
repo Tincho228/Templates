@@ -18,45 +18,6 @@
                 <p class="category-description">{{$categoria->description}}</p>
                 <a class="btn btn-sm text-warning category-button" href="{{ route('categoria.show',$categoria)}}">Ver más</a>
             </div>
-
-            {{-- <div class="item__container">
-                <img class="item__img" src="{{Storage::url($photo->url)}}" alt="Photo"
-                    id="picture{{$photo->id}}">
-                <div class="item__overlay">
-                    <p><i class="fas fa-trash-alt text-white icon-delete"  ></i> Borrar imagen?</p>
-                    <button type="button" class="btn btn-outline-light" wire:click="deleteConfirmation({{$photo->id}})">Borrar</button>
-                </div>
-            </div> --}}
-            {{-- <style>
-                .item__container{
-                    position: relative;
-                    margin:5px;
-                }
-                .item__img {
-                    display: block;
-                    width: 100%;
-                }
-                .item__overlay {
-                    position: absolute;
-                    top:0px;
-                    left:0;
-                    height: 100%;
-                    width: 100%;
-                    background:rgba(0,0,0,0.6);
-                    color: whitesmoke;
-                    display:flex;
-                    flex-direction: column;
-                    align-items:center;
-                    justify-content: center; 
-                    opacity: 0;
-                    transition: 0.5s;
-                    
-                }
-                .item__overlay:hover {
-                    opacity: 1;
-                    transition:0.5;
-                }
-            </style> --}}
         </div>
         @endforeach
     </div>

@@ -15,9 +15,9 @@
             <div class="col-sm-12 col-md-6 col-lg-4 footer-social">
                 <p class="mt-3 mb-1 h5">Redes Sociales</p>
                 <div class="social-container p-3">
-                    <a href=""><i class="fab fa-instagram h1 text-light" style="margin-right:10px;"></i></a>
-                    <a href=""><i class="fab fa-facebook-f h1 text-light" style="margin-right:10px;"></i></a>
-                    <a href=""><i class="fab fa-whatsapp h1 text-light"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram h1 text-light" style="margin-right:10px;"></i></a>
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f h1 text-light" style="margin-right:10px;"></i></a>
+                    <a href="https://web.whatsapp.com/" target="_blank"><i class="fab fa-whatsapp h1 text-light"></i></a>
                 </div>
 
             </div>
