@@ -259,6 +259,12 @@ return [
             'can'         => 'admin.users.index',
         ],
         [
+            'text'        => 'Planes',
+            'route'         => 'admin.plans.index',
+            'icon'        => 'fas fa-dollar-sign fa-fw',
+            'can'         => 'admin.plans.index',
+        ],
+        [
             'text'        => 'Lista de roles',
             'route'         => 'admin.roles.index',
             'icon'        => 'fas fa-users-cog fa-fw',

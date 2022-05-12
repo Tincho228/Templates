@@ -52,6 +52,14 @@
           <a href="{{route('admin.roles.index')}}"type="button" class="btn btn-outline-light">Mostrar lista</a>
     </div>
     </div>
+    <div class="card text-white bg-dark m-3" style="max-width: 18rem;">
+        <div class="card-header"><i class="fa fa-users-cog"></i> Planes</div>
+        <div class="card-body">
+          <h5 class="card-title">Success card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href=""type="button" class="btn btn-outline-light">Mostrar lista</a>
+    </div>
+    </div>
 </div>
 
 @stop

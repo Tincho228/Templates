@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\CategoriaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\InstructorController;
+use App\Http\Controllers\Admin\PlanController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
@@ -20,6 +21,8 @@ Route::resource('categorias', CategoriaController::class)->except('show')->names
 Route::resource('instructors', InstructorController::class)->except('show')->names('admin.instructors');
 
 Route::resource('posts', PostController::class)->except('show')->names('admin.posts');
+
+Route::resource('plans', PlanController::class)->except('show')->names('admin.plans');
 
 
 /*******************ROUTES************************* */

@@ -73,7 +73,8 @@
   --bg-skyblue-middle: rgb(33,120,241);
   --bg-skyblue-dark: rgb(46,117,182);
   --bg-nav-link-active:rgb(255,255,0);
-  --bg-categoria-skyblue:rgb(7,160,233);
+  /*--bg-categoria-skyblue:rgb(7,160,233);*/
+  --bg-categoria-skyblue:#305160;
   --body-font: 'Poppins', sans-serif;
   --body-italic: 'Roboto', sans-serif;
   --title-font: Arial, Helvetica, sans-serif;
@@ -275,6 +276,7 @@
   -webkit-transform: scale(1.5,1.5);
   -webkit-transition: all 0.5s ease-in-out;
 } 
+
 .category-body{
   position: absolute;
   top: 50%;

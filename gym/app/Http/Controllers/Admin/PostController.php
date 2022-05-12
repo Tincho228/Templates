@@ -49,6 +49,7 @@ class PostController extends Controller
      */
     public function store(PostRequest $request)
     {
+        
         $post = Post::create($request->all());
 
         return redirect()->route('admin.posts.edit', $post);   
