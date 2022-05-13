@@ -6,14 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 class Plan extends Model
 {
     use HasFactory;
-    protected $fillable = ['name','slug','price','description','user_id'];
+    protected $fillable = ['name','slug','price','description'];
 
     public function getRouteKeyName()
     {
         return 'slug';
     }
-
+    // Relacion muchos a muchos
     public function user(){
-        return $this->belongsTo(User::class);
+        return $this->belongsToMany(User::class);
     }
 }

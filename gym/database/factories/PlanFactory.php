@@ -22,8 +22,7 @@ class PlanFactory extends Factory
             'name' => $name,
             'slug' => Str::slug($name),
             'price' => $this->faker->numberBetween(10,100),
-            'description' => $this->faker->paragraph(2),
-            'user_id'=> 1
+            'description' => $this->faker->paragraph(2)
         ];
     }
 }
