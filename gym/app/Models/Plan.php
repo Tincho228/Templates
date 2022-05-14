@@ -13,7 +13,7 @@ class Plan extends Model
         return 'slug';
     }
     // Relacion muchos a muchos
-    public function user(){
+    public function users(){
         return $this->belongsToMany(User::class);
     }
 }

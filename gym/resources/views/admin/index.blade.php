@@ -57,7 +57,7 @@
         <div class="card-body">
           <h5 class="card-title">Success card title</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href=""type="button" class="btn btn-outline-light">Mostrar lista</a>
+          <a href="{{route('admin.plans.index')}}"type="button" class="btn btn-outline-light">Mostrar lista</a>
     </div>
     </div>
 </div>

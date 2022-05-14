@@ -30,6 +30,7 @@
                             <a class="btn btn-primary btn-sm" href="{{route('admin.users.edit',$user)}}">Editar</a>
                         </td>
                     </tr>
+                    
                     @include('admin.users.partials.modal-delete')
                     @endforeach
 

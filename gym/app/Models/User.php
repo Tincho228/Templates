@@ -65,7 +65,7 @@ class User extends Authenticatable
         return $this->hasMany(Post::class);
     }
     // Relacion muchos as muchos
-    public function plan()
+    public function plans()
     {
         return $this->belongsToMany(Plan::class);
     }
