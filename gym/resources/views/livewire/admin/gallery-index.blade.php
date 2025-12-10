@@ -4,7 +4,7 @@
             <p>Lista de fotos</p>
             @if ($gallery->count()>0)
             <div class="row">
-                @foreach ($gallery as $photo)
+                @foreach ($images as $photo)
                 <div class="col-sm-6 col-lg-3">
                 <div class="item__container">
                     <img class="item__img" src="{{Storage::url($photo->url)}}" alt="Photo"
